@@ -1,0 +1,331 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+This file is used by the publish/package process of your Web project. You can customize the behavior of this process
+by editing this MSBuild file. In order to learn more about this please visit http://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <_PublishTargetUrl>D:\Inventory Website</_PublishTargetUrl>
+  </PropertyGroup>
+  <ItemGroup>
+    <File Include="AppSettings.config">
+      <publishTime>12/20/2016 18:14:38</publishTime>
+    </File>
+    <File Include="bin/EntityFramework.dll">
+      <publishTime>04/09/2016 17:50:22</publishTime>
+    </File>
+    <File Include="bin/InventoryManagement.dll">
+      <publishTime>12/28/2016 11:56:15</publishTime>
+    </File>
+    <File Include="bin/Newtonsoft.Json.dll">
+      <publishTime>11/25/2016 22:08:28</publishTime>
+    </File>
+    <File Include="bin/System.Net.Http.Formatting.dll">
+      <publishTime>11/25/2016 22:08:30</publishTime>
+    </File>
+    <File Include="bin/System.Web.Http.dll">
+      <publishTime>11/25/2016 22:08:30</publishTime>
+    </File>
+    <File Include="bin/System.Web.Http.WebHost.dll">
+      <publishTime>11/25/2016 22:08:32</publishTime>
+    </File>
+    <File Include="CSS/awesomplete.css">
+      <publishTime>12/18/2016 07:59:56</publishTime>
+    </File>
+    <File Include="CSS/bootstrap-theme.min.css">
+      <publishTime>12/27/2016 10:14:55</publishTime>
+    </File>
+    <File Include="CSS/bootstrap.min.css">
+      <publishTime>12/27/2016 10:14:55</publishTime>
+    </File>
+    <File Include="CSS/Custom.css">
+      <publishTime>11/16/2016 16:38:22</publishTime>
+    </File>
+    <File Include="CSS/GoogleUIStyle.css">
+      <publishTime>04/10/2016 14:49:14</publishTime>
+    </File>
+    <File Include="CSS/jquery-ui.1.12.1.css">
+      <publishTime>12/22/2016 20:30:36</publishTime>
+    </File>
+    <File Include="CSS/jquery.dynatable.css">
+      <publishTime>12/21/2016 11:12:50</publishTime>
+    </File>
+    <File Include="CSS/magicsuggest-min.css">
+      <publishTime>12/22/2016 09:06:54</publishTime>
+    </File>
+    <File Include="CSS/MyDynaTable.css">
+      <publishTime>12/21/2016 18:41:44</publishTime>
+    </File>
+    <File Include="CSS/styles.css">
+      <publishTime>04/10/2016 11:43:54</publishTime>
+    </File>
+    <File Include="Database/Data.edmx.diagram">
+      <publishTime>12/27/2016 16:17:22</publishTime>
+    </File>
+    <File Include="Database/InventoryManagement.edmx.diagram">
+      <publishTime>11/17/2016 21:58:06</publishTime>
+    </File>
+    <File Include="fonts/glyphicons-halflings-regular.eot">
+      <publishTime>12/27/2016 10:16:43</publishTime>
+    </File>
+    <File Include="fonts/glyphicons-halflings-regular.svg">
+      <publishTime>12/27/2016 10:16:43</publishTime>
+    </File>
+    <File Include="fonts/glyphicons-halflings-regular.ttf">
+      <publishTime>12/27/2016 10:16:43</publishTime>
+    </File>
+    <File Include="fonts/glyphicons-halflings-regular.woff">
+      <publishTime>12/27/2016 10:16:43</publishTime>
+    </File>
+    <File Include="fonts/glyphicons-halflings-regular.woff2">
+      <publishTime>12/27/2016 10:16:43</publishTime>
+    </File>
+    <File Include="Images/banner.jpg">
+      <publishTime>04/10/2016 11:44:40</publishTime>
+    </File>
+    <File Include="Images/body-bg.png">
+      <publishTime>04/10/2016 11:44:40</publishTime>
+    </File>
+    <File Include="Images/gray-h-dots.png">
+      <publishTime>04/10/2016 11:44:40</publishTime>
+    </File>
+    <File Include="Images/gray-v-dots.png">
+      <publishTime>04/10/2016 11:44:40</publishTime>
+    </File>
+    <File Include="Images/h-dots.png">
+      <publishTime>04/10/2016 11:44:40</publishTime>
+    </File>
+    <File Include="Images/img-1.png">
+      <publishTime>04/10/2016 11:44:40</publishTime>
+    </File>
+    <File Include="Images/img-2.png">
+      <publishTime>04/10/2016 11:44:40</publishTime>
+    </File>
+    <File Include="Images/img-3.png">
+      <publishTime>04/10/2016 11:44:40</publishTime>
+    </File>
+    <File Include="Images/link-devider.png">
+      <publishTime>04/10/2016 11:44:40</publishTime>
+    </File>
+    <File Include="Images/page-bg.png">
+      <publishTime>04/10/2016 11:44:40</publishTime>
+    </File>
+    <File Include="Images/panel-bg.png">
+      <publishTime>04/10/2016 11:44:40</publishTime>
+    </File>
+    <File Include="Images/password-icon.png">
+      <publishTime>04/10/2016 11:44:40</publishTime>
+    </File>
+    <File Include="Images/search-icon.png">
+      <publishTime>04/10/2016 11:44:40</publishTime>
+    </File>
+    <File Include="Images/top-bg.png">
+      <publishTime>04/10/2016 11:44:40</publishTime>
+    </File>
+    <File Include="Images/user-icon.png">
+      <publishTime>04/10/2016 11:44:40</publishTime>
+    </File>
+    <File Include="Images/v-dots-footer.png">
+      <publishTime>04/10/2016 11:44:40</publishTime>
+    </File>
+    <File Include="Images/v-dots.png">
+      <publishTime>04/10/2016 11:44:40</publishTime>
+    </File>
+    <File Include="Inventory/Inventory.aspx">
+      <publishTime>10/30/2016 13:45:46</publishTime>
+    </File>
+    <File Include="Inventory/InventoryList.aspx">
+      <publishTime>11/16/2016 20:25:00</publishTime>
+    </File>
+    <File Include="Inventory/InventoryOrder.aspx">
+      <publishTime>11/23/2016 11:57:56</publishTime>
+    </File>
+    <File Include="Inventory/InventoryOrders.aspx">
+      <publishTime>10/30/2016 18:33:32</publishTime>
+    </File>
+    <File Include="Inventory/InventoryTypes.aspx">
+      <publishTime>11/17/2016 22:37:02</publishTime>
+    </File>
+    <File Include="Inventory/PurchaseOrder.aspx">
+      <publishTime>11/24/2016 12:40:14</publishTime>
+    </File>
+    <File Include="Inventory/PurchaseOrderDetail.aspx">
+      <publishTime>11/23/2016 22:35:24</publishTime>
+    </File>
+    <File Include="Main/AddMeasurement.aspx">
+      <publishTime>10/30/2016 19:34:02</publishTime>
+    </File>
+    <File Include="Main/Assign Work.aspx">
+      <publishTime>11/17/2016 23:37:06</publishTime>
+    </File>
+    <File Include="Main/Employee.aspx">
+      <publishTime>11/16/2016 18:16:48</publishTime>
+    </File>
+    <File Include="Main/InventoryReport.aspx">
+      <publishTime>11/16/2016 18:21:48</publishTime>
+    </File>
+    <File Include="Main/LogIn.aspx">
+      <publishTime>11/16/2016 20:33:32</publishTime>
+    </File>
+    <File Include="Main/PurchaseReport.aspx">
+      <publishTime>11/24/2016 12:59:42</publishTime>
+    </File>
+    <File Include="Main/SalaryReport.aspx">
+      <publishTime>11/18/2016 00:09:18</publishTime>
+    </File>
+    <File Include="Main/SaleOrder.aspx">
+      <publishTime>11/24/2016 12:12:38</publishTime>
+    </File>
+    <File Include="Main/SaleOrderDetails.aspx">
+      <publishTime>11/24/2016 12:20:10</publishTime>
+    </File>
+    <File Include="Main/Schools.aspx">
+      <publishTime>11/17/2016 22:41:20</publishTime>
+    </File>
+    <File Include="Main/SellingReport.aspx">
+      <publishTime>11/24/2016 12:47:20</publishTime>
+    </File>
+    <File Include="Main/Users.aspx">
+      <publishTime>11/16/2016 18:20:08</publishTime>
+    </File>
+    <File Include="Main/WorkCreation.aspx">
+      <publishTime>10/30/2016 18:33:48</publishTime>
+    </File>
+    <File Include="packages.config">
+      <publishTime>11/25/2016 22:08:32</publishTime>
+    </File>
+    <File Include="Pages/AssignWork/AddAssignWork.aspx">
+      <publishTime>12/28/2016 11:05:50</publishTime>
+    </File>
+    <File Include="Pages/AssignWork/AllAssignWork.aspx">
+      <publishTime>12/28/2016 11:00:45</publishTime>
+    </File>
+    <File Include="Pages/AssignWork/EditAssignWork.aspx">
+      <publishTime>12/28/2016 11:10:59</publishTime>
+    </File>
+    <File Include="Pages/Cheque/AddCheque.aspx">
+      <publishTime>12/20/2016 09:58:18</publishTime>
+    </File>
+    <File Include="Pages/Customers/AddCustomer.aspx">
+      <publishTime>12/25/2016 14:04:24</publishTime>
+    </File>
+    <File Include="Pages/Customers/AllCustomers.aspx">
+      <publishTime>12/25/2016 14:03:26</publishTime>
+    </File>
+    <File Include="Pages/Customers/EditCustomer.aspx">
+      <publishTime>12/25/2016 14:05:14</publishTime>
+    </File>
+    <File Include="Pages/Employees/AddEmployee.aspx">
+      <publishTime>12/24/2016 00:19:36</publishTime>
+    </File>
+    <File Include="Pages/Employees/AllEmployees.aspx">
+      <publishTime>12/25/2016 12:59:50</publishTime>
+    </File>
+    <File Include="Pages/Employees/EditEmployee.aspx">
+      <publishTime>12/25/2016 13:00:46</publishTime>
+    </File>
+    <File Include="Pages/Expenses/AddExpense.aspx">
+      <publishTime>12/25/2016 13:18:00</publishTime>
+    </File>
+    <File Include="Pages/Expenses/AllExpenses.aspx">
+      <publishTime>12/25/2016 13:23:52</publishTime>
+    </File>
+    <File Include="Pages/Expenses/EditExpense.aspx">
+      <publishTime>12/25/2016 13:20:36</publishTime>
+    </File>
+    <File Include="Pages/Inventorys/AddInventory.aspx">
+      <publishTime>12/27/2016 17:42:45</publishTime>
+    </File>
+    <File Include="Pages/Inventorys/AllInventory.aspx">
+      <publishTime>12/27/2016 16:34:54</publishTime>
+    </File>
+    <File Include="Pages/Inventorys/EditInventory.aspx">
+      <publishTime>12/27/2016 17:48:26</publishTime>
+    </File>
+    <File Include="Pages/Main/LogIn.aspx">
+      <publishTime>12/27/2016 11:41:28</publishTime>
+    </File>
+    <File Include="Pages/PurchaseOrder/AddPurchaseOrder.aspx">
+      <publishTime>12/27/2016 18:13:53</publishTime>
+    </File>
+    <File Include="Pages/PurchaseOrder/AllPurchaseOrders.aspx">
+      <publishTime>12/26/2016 16:54:19</publishTime>
+    </File>
+    <File Include="Pages/PurchaseOrder/EditPurchaseOrder.aspx">
+      <publishTime>12/27/2016 17:56:12</publishTime>
+    </File>
+    <File Include="Pages/Reports/InventoryReport.aspx">
+      <publishTime>12/27/2016 09:07:45</publishTime>
+    </File>
+    <File Include="Pages/Reports/PurchaseReport.aspx">
+      <publishTime>12/27/2016 19:08:38</publishTime>
+    </File>
+    <File Include="Pages/Reports/SellingReport.aspx">
+      <publishTime>12/27/2016 19:08:45</publishTime>
+    </File>
+    <File Include="Pages/SaleOrder/AllSaleOrders.aspx">
+      <publishTime>12/27/2016 09:15:24</publishTime>
+    </File>
+    <File Include="Pages/SaleOrder/EditSaleOrder.aspx">
+      <publishTime>12/28/2016 11:06:42</publishTime>
+    </File>
+    <File Include="Pages/SaleOrder/SaleOrder.aspx">
+      <publishTime>12/27/2016 18:10:13</publishTime>
+    </File>
+    <File Include="Pages/Sellers/AddSeller.aspx">
+      <publishTime>12/25/2016 14:09:54</publishTime>
+    </File>
+    <File Include="Pages/Sellers/AllSellers.aspx">
+      <publishTime>12/25/2016 14:06:12</publishTime>
+    </File>
+    <File Include="Pages/Sellers/EditSeller.aspx">
+      <publishTime>12/25/2016 14:07:48</publishTime>
+    </File>
+    <File Include="Pages/Users/AddUser.aspx">
+      <publishTime>12/25/2016 14:15:32</publishTime>
+    </File>
+    <File Include="Pages/Users/AllUsers.aspx">
+      <publishTime>12/25/2016 14:14:30</publishTime>
+    </File>
+    <File Include="Pages/Users/EditUser.aspx">
+      <publishTime>12/21/2016 18:34:46</publishTime>
+    </File>
+    <File Include="Scripts/awesomplete.min.js">
+      <publishTime>12/18/2016 08:00:14</publishTime>
+    </File>
+    <File Include="Scripts/bootstrap.min.js">
+      <publishTime>12/27/2016 10:17:12</publishTime>
+    </File>
+    <File Include="Scripts/Custom.js">
+      <publishTime>12/21/2016 18:39:44</publishTime>
+    </File>
+    <File Include="Scripts/jquery-1.10.2.js">
+      <publishTime>04/10/2016 14:56:58</publishTime>
+    </File>
+    <File Include="Scripts/jquery-1.12.4.js">
+      <publishTime>12/22/2016 09:07:38</publishTime>
+    </File>
+    <File Include="Scripts/jquery-ui 1.11.14.js">
+      <publishTime>04/10/2016 14:56:58</publishTime>
+    </File>
+    <File Include="Scripts/jquery.dynatable.js">
+      <publishTime>12/21/2016 11:13:10</publishTime>
+    </File>
+    <File Include="Scripts/magicsuggest-min.js">
+      <publishTime>12/22/2016 09:07:12</publishTime>
+    </File>
+    <File Include="Scripts/PurchaseOrder.js">
+      <publishTime>12/27/2016 18:23:10</publishTime>
+    </File>
+    <File Include="Scripts/SaleOrder.js">
+      <publishTime>12/27/2016 18:19:06</publishTime>
+    </File>
+    <File Include="Site.Master">
+      <publishTime>12/27/2016 16:47:55</publishTime>
+    </File>
+    <File Include="Web.config">
+      <publishTime>12/28/2016 11:56:17</publishTime>
+    </File>
+  </ItemGroup>
+</Project>

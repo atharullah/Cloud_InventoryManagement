@@ -1,0 +1,203 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="InventoryManagement.Site" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title></title>
+    <link href="/CSS/bootstrap.min.css" rel="stylesheet" />
+    <link href="/CSS/bootstrap-theme.min.css" rel="stylesheet" />
+    <link href="/CSS/jquery-ui.1.12.1.css" rel="stylesheet" />
+    <link href="/CSS/Custom.css" rel="stylesheet" />
+    <script src="/Scripts/jquery-1.12.4.js"></script>
+    <script src="/Scripts/jquery-ui 1.11.14.js"></script>
+    <script src="/Scripts/bootstrap.min.js"></script>
+    <script>
+        $(function () {
+            $.each($('.navbar').find('li'), function () {
+                $(this).removeClass("active");
+
+                if ($(this).find("a").length > 0)
+                {
+                    var loc = window.location.pathname;
+                    var currentLocdir = loc.substring(0, loc.lastIndexOf('/'));
+
+                    var anchor = $(this).find('a').attr('href');
+                    var anchorDir = anchor.substring(0, anchor.lastIndexOf('/'));
+
+                    if (currentLocdir.endsWith("Reports")) {
+                        if (loc == anchor)
+                            $(this).addClass("active");
+                    }
+                    else {
+                        if (currentLocdir == anchorDir)
+                            $(this).addClass("active");
+                    }
+                }
+            });
+        });
+    </script>
+    <style>
+        .navbar-inverse .navbar-nav > li > a:focus, .navbar-inverse .navbar-nav > li > a:hover {
+            background-color: #202e3c !important;
+        }
+
+        .logOutAnchor:hover input {
+            background-color: #202e3c;
+        }
+
+        .form-group label {
+            font-weight: normal;
+            font-family: "Segoe UI", "Helvetica Neue", Helvetica, Arial, sans-serif;
+            font-size: 15px;
+        }
+
+        .navbar a {
+            font-family: "Segoe UI", "Helvetica Neue", Helvetica, Arial, sans-serif;
+            font-size: 15px;
+        }
+
+        .navbar-inverse .side-nav li > a {
+            color: white !important;
+        }
+
+        .navbar-inverse .navbar-brand {
+            color: white !important;
+        }
+
+        .topHeader {
+            background-color: #263949;
+            color: white;
+            letter-spacing: 3px;
+            margin-bottom: 14px;
+            font-family: "Segoe UI", "Helvetica Neue", Helvetica, Arial, sans-serif;
+            height: 30px;
+            font-size: 20px;
+        }
+
+        .midHeader {
+            background-color: #263949;
+            color: white;
+            letter-spacing: 3px;
+            font-family: "Segoe UI", "Helvetica Neue", Helvetica, Arial, sans-serif;
+            height: 30px;
+            font-size: 20px;
+        }
+
+        .table th {
+            font-family: "Segoe UI", "Helvetica Neue", Helvetica, Arial, sans-serif;
+            font-weight: 600;
+            font-size: 14px;
+        }
+
+        .table.text-center th {
+            text-align: center;
+        }
+
+        .nav.navbar-nav.side-nav > .active > a {
+            background-color: #202e3c !important;
+            background-image: none;
+        }
+
+        body, input {
+            font-family: "Segoe UI", "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+        }
+
+        .btn-primary {
+            background-color: #34495e !important;
+            background-image: none;
+        }
+    </style>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <asp:ScriptManager runat="server" ID="scriptMgr1" EnablePageMethods="true"></asp:ScriptManager>
+        <asp:HiddenField runat="server" ID="hdnCurrentUserRole" ClientIDMode="Static" />
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-2">
+                    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+                        <div class="container-fluid">
+                            <div class="navbar-header">
+                                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#MyNav">
+                                    <span class="sr-only">Toggle Navigation</span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                </button>
+
+                                <a class="navbar-brand" href="/Pages/SaleOrder/SaleOrder.aspx"><span class="glyphicon glyphicon-home"></span>&nbsp;Home</a>
+                            </div>
+                            <ul class="nav navbar-right top-nav" style="font-size:18px;margin-top:1%">
+                                <li>
+                                    <div style="color:white">
+                                        Welcome, 
+                                        <b>
+                                    <asp:Label runat="server" ID="lblUserName"></asp:Label></b> 
+                                    </div>
+                                </li>
+                            </ul>
+                            <%-- <ul class="nav navbar-right top-nav">
+                                <li class="dropdown">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Hello 
+                                        <asp:Label runat="server" ID="lblUserName"></asp:Label><span class="caret"></span>
+                                    </a>
+                                    <ul class="dropdown-menu">
+                                    </ul>
+                                </li>
+                            </ul>--%>
+                            <div class="navbar-collapse collapse" id="MyNav">
+                                <ul class="nav navbar-nav side-nav">
+                                    <li><a href="/Pages/SaleOrder/SaleOrder.aspx"><span class="glyphicon glyphicon-shopping-cart"></span>&nbsp;Sale Order</a></li>
+                                    <li><a href="/Pages/AssignWork/AddAssignWork.aspx"><span class="glyphicon glyphicon-user"></span>&nbsp;Assign Work</a></li>
+                                    <li><a href="/Pages/PurchaseOrder/AddPurchaseOrder.aspx"><span class="glyphicon glyphicon-shopping-cart"></span>&nbsp;Purchase Order</a></li>
+                                    <%--<li><a href="/Inventory/InventoryList.aspx">Inventory List<span class="sr-only">(current)</span></a></li>--%>
+                                    <li><a href="/Pages/Inventorys/AllInventory.aspx"><span class="glyphicon glyphicon-piggy-bank"></span>&nbsp;Inventories</a></li>
+                                    <li><a href="/Pages/Expenses/AllExpenses.aspx"><span class="glyphicon glyphicon-glass"></span>&nbsp;Expenses</a></li>
+                                    <li><a href="/Pages/Cheque/AddCheque.aspx"><span class="glyphicon glyphicon-file"></span>&nbsp;Cheque</a></li>
+                                    <li><a href="/Pages/Payment/CashPayment.aspx"><span class="glyphicon glyphicon-usd"></span>&nbsp;Cash Payment</a></li>
+                                    <%--<li class="dropdown" runat="server" id="adminNav">
+                                        <a class="dropdown-toggle" data-toggle="collapse" data-target="#fDiv" href="#">Admin <span class="caret"></span></a>
+                                        <ul id="fDiv" class="collapse">--%>
+                                    <li><a href="/Pages/Customers/AllCustomers.aspx"><span class="glyphicon glyphicon-user"></span>&nbsp;Customers</a></li>
+                                    <li><a href="/Pages/Sellers/AllSellers.aspx"><span class="glyphicon glyphicon-user"></span>&nbsp;Vendors</a></li>
+                                    <li><a href="/Pages/Employees/AllEmployees.aspx"><span class="glyphicon glyphicon-user"></span>&nbsp;Employees</a></li>
+                                    <li><a href="/Pages/Users/AllUsers.aspx"><span class="glyphicon glyphicon-user"></span>&nbsp;Users</a></li>
+                                    <%--</ul>
+                                    </li>
+                                    <li class="dropdown" runat="server" id="reportNav">
+                                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Reports <span class="caret"></span></a>
+                                        <ul class="dropdown-menu">--%>
+                                    <li><a href="/Pages/Reports/SalaryReport.aspx"><span class="glyphicon glyphicon-stats"></span>&nbsp;Salary Report</a></li>
+                                    <li><a href="/Pages/Reports/SellingReport.aspx"><span class="glyphicon glyphicon-stats"></span>&nbsp;Selling Report</a></li>
+                                    <li><a href="/Pages/Reports/PurchaseReport.aspx"><span class="glyphicon glyphicon-stats"></span>&nbsp;Purchase Report</a></li>
+                                    <%-- </ul>
+                                    </li>--%>
+                                    <li>
+                                        <asp:LinkButton CausesValidation="false" runat="server" ClientIDMode="Static" ID="btnLogOut" OnClick="btnLogOut_Click">
+                                            <span class="glyphicon glyphicon-off"></span>&nbsp;Log Out
+                                        </asp:LinkButton>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </nav>
+                </div>
+                <div class="col-md-10 panel panel-primary" style="padding-left: 2%">
+
+                    <asp:ContentPlaceHolder ID="body" runat="server">
+                    </asp:ContentPlaceHolder>
+                </div>
+            </div>
+
+            <%--<div class="well">
+                Copyright (c) Inventory Management Design by Mohammad Atharullah
+            </div>--%>
+        </div>
+    </form>
+</body>
+</html>

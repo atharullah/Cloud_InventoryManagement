@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.21005.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InventoryManagement", "InventoryManagement\InventoryManagement.csproj", "{174A494B-B784-45A8-92C2-2146AECF4816}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestConsole", "TestConsole\TestConsole.csproj", "{0E11092B-CA55-4F26-AA86-CDB4F57AB5C1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NotificationSender", "NotificationSender\NotificationSender.csproj", "{234A4CE7-94B8-48FB-B530-CE902E0A13C6}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{174A494B-B784-45A8-92C2-2146AECF4816}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{174A494B-B784-45A8-92C2-2146AECF4816}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{174A494B-B784-45A8-92C2-2146AECF4816}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{174A494B-B784-45A8-92C2-2146AECF4816}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0E11092B-CA55-4F26-AA86-CDB4F57AB5C1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0E11092B-CA55-4F26-AA86-CDB4F57AB5C1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0E11092B-CA55-4F26-AA86-CDB4F57AB5C1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0E11092B-CA55-4F26-AA86-CDB4F57AB5C1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{234A4CE7-94B8-48FB-B530-CE902E0A13C6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{234A4CE7-94B8-48FB-B530-CE902E0A13C6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{234A4CE7-94B8-48FB-B530-CE902E0A13C6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{234A4CE7-94B8-48FB-B530-CE902E0A13C6}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

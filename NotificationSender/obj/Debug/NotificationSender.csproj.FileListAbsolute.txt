@@ -1,0 +1,24 @@
+F:\Office Data\InventoryManagement\NotificationSender\bin\Debug\NotificationSender.exe.config
+F:\Office Data\InventoryManagement\NotificationSender\bin\Debug\NotificationSender.exe
+F:\Office Data\InventoryManagement\NotificationSender\bin\Debug\NotificationSender.pdb
+F:\Office Data\InventoryManagement\NotificationSender\bin\Debug\EntityFramework.dll
+F:\Office Data\InventoryManagement\NotificationSender\bin\Debug\EntityFramework.xml
+F:\Office Data\InventoryManagement\NotificationSender\obj\Debug\NotificationSender.csprojResolveAssemblyReference.cache
+F:\Office Data\InventoryManagement\NotificationSender\obj\Debug\NotificationSender.exe
+F:\Office Data\InventoryManagement\NotificationSender\obj\Debug\NotificationSender.pdb
+D:\Office Data\InventoryManagement\NotificationSender\bin\Debug\NotificationSender.exe.config
+D:\Office Data\InventoryManagement\NotificationSender\bin\Debug\NotificationSender.exe
+D:\Office Data\InventoryManagement\NotificationSender\bin\Debug\NotificationSender.pdb
+D:\Office Data\InventoryManagement\NotificationSender\bin\Debug\EntityFramework.dll
+D:\Office Data\InventoryManagement\NotificationSender\bin\Debug\EntityFramework.xml
+D:\Office Data\InventoryManagement\NotificationSender\obj\Debug\NotificationSender.csprojResolveAssemblyReference.cache
+D:\Office Data\InventoryManagement\NotificationSender\obj\Debug\NotificationSender.exe
+D:\Office Data\InventoryManagement\NotificationSender\obj\Debug\NotificationSender.pdb
+E:\Other Work\Office Data\InventoryManagement\NotificationSender\bin\Debug\NotificationSender.exe.config
+E:\Other Work\Office Data\InventoryManagement\NotificationSender\bin\Debug\NotificationSender.exe
+E:\Other Work\Office Data\InventoryManagement\NotificationSender\bin\Debug\NotificationSender.pdb
+E:\Other Work\Office Data\InventoryManagement\NotificationSender\bin\Debug\EntityFramework.dll
+E:\Other Work\Office Data\InventoryManagement\NotificationSender\bin\Debug\EntityFramework.xml
+E:\Other Work\Office Data\InventoryManagement\NotificationSender\obj\Debug\NotificationSender.csprojResolveAssemblyReference.cache
+E:\Other Work\Office Data\InventoryManagement\NotificationSender\obj\Debug\NotificationSender.exe
+E:\Other Work\Office Data\InventoryManagement\NotificationSender\obj\Debug\NotificationSender.pdb

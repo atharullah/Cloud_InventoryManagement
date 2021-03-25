@@ -1,0 +1,907 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="InventoryManagementModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="CapitalDetail">
+          <Key>
+            <PropertyRef Name="CapitalDetailID" />
+          </Key>
+          <Property Name="CapitalDetailID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CapitalUseDate" Type="date" />
+          <Property Name="CapitalTypeID" Type="int" />
+          <Property Name="Amount" Type="int" />
+          <Property Name="Remarks" Type="varchar" MaxLength="600" />
+          <Property Name="SellBuyBillNo" Type="varchar" MaxLength="60" />
+          <Property Name="CreatedBy" Type="varchar" MaxLength="60" />
+          <Property Name="CreatedDate" Type="date" />
+          <Property Name="ModifiedBy" Type="varchar" MaxLength="60" />
+          <Property Name="ModifiedDate" Type="date" />
+        </EntityType>
+        <EntityType Name="CapitalType">
+          <Key>
+            <PropertyRef Name="CapitalTypeID" />
+          </Key>
+          <Property Name="CapitalTypeID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CapitalTypeName" Type="varchar" MaxLength="60" />
+        </EntityType>
+        <EntityType Name="CustomerType">
+          <Key>
+            <PropertyRef Name="CustomerTypeID" />
+          </Key>
+          <Property Name="CustomerTypeID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CustomerTypeName" Type="varchar" MaxLength="60" />
+        </EntityType>
+        <EntityType Name="DevelopmentWork">
+          <Key>
+            <PropertyRef Name="DevelopmentWorkID" />
+          </Key>
+          <Property Name="DevelopmentWorkID" Type="int" Nullable="false" />
+          <Property Name="SaleOrderID" Type="int" />
+          <Property Name="BillNo" Type="varchar" MaxLength="60" />
+          <Property Name="ConfirmDate" Type="date" />
+          <Property Name="DeliveryDate" Type="date" />
+          <Property Name="TopMeasurement" Type="varchar" MaxLength="100" />
+          <Property Name="BottomMeasurement" Type="varchar" MaxLength="100" />
+          <Property Name="DesignPhotoUrl" Type="varchar" MaxLength="600" />
+          <Property Name="WorkTypeID" Type="int" />
+          <Property Name="CreatedBy" Type="varchar" MaxLength="60" />
+          <Property Name="CreatedDate" Type="date" />
+          <Property Name="ModifiedBy" Type="varchar" MaxLength="60" />
+          <Property Name="ModifiedDate" Type="date" />
+        </EntityType>
+        <EntityType Name="Employee">
+          <Key>
+            <PropertyRef Name="EmployeeID" />
+          </Key>
+          <Property Name="EmployeeID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="EmployeeName" Type="varchar" MaxLength="700" />
+          <Property Name="Mobile" Type="varchar" MaxLength="20" />
+          <Property Name="Email" Type="varchar" MaxLength="60" />
+          <Property Name="Address" Type="varchar" MaxLength="700" />
+          <Property Name="JoiningDate" Type="date" />
+          <Property Name="Detail" Type="varchar" MaxLength="700" />
+          <Property Name="IsActive" Type="bit" />
+          <Property Name="CreatedBy" Type="varchar" MaxLength="60" />
+          <Property Name="CreatedDate" Type="date" />
+          <Property Name="ModifiedBy" Type="varchar" MaxLength="60" />
+          <Property Name="ModifiedDate" Type="date" />
+        </EntityType>
+        <EntityType Name="Inventory">
+          <Key>
+            <PropertyRef Name="InventoryID" />
+          </Key>
+          <Property Name="InventoryID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="InventoryTypeID" Type="int" />
+          <Property Name="NoOfItem" Type="int" />
+          <Property Name="PurchaseRate" Type="int" />
+          <Property Name="SellingRate" Type="int" />
+          <Property Name="UnitID" Type="int" />
+          <Property Name="IsFastRunning" Type="bit" />
+          <Property Name="Remarks" Type="varchar" MaxLength="60" />
+          <Property Name="CreatedBy" Type="varchar" MaxLength="600" />
+          <Property Name="CreatedOn" Type="date" />
+          <Property Name="UpdateBy" Type="varchar" MaxLength="600" />
+          <Property Name="UpdatedOn" Type="date" />
+        </EntityType>
+        <EntityType Name="InventoryOrderDetail">
+          <Key>
+            <PropertyRef Name="InventoryOrderDetailID" />
+          </Key>
+          <Property Name="InventoryOrderDetailID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="InventoryTypeID" Type="int" Nullable="false" />
+          <Property Name="PurchaseRate" Type="int" />
+          <Property Name="Quantity" Type="int" />
+          <Property Name="TotalItemsCost" Type="int" />
+          <Property Name="VatNo" Type="varchar" MaxLength="60" />
+          <Property Name="UnitID" Type="int" />
+          <Property Name="SaleRate" Type="int" />
+          <Property Name="BarcodeID" Type="varchar" MaxLength="200" />
+          <Property Name="InventoryOrderID" Type="int" />
+          <Property Name="CreatedBy" Type="varchar" MaxLength="100" />
+          <Property Name="CreatedDate" Type="date" />
+          <Property Name="ModifiedBy" Type="varchar" MaxLength="100" />
+          <Property Name="ModifiedDate" Type="date" />
+        </EntityType>
+        <EntityType Name="InventoryOrders">
+          <Key>
+            <PropertyRef Name="InventoryOrderID" />
+          </Key>
+          <Property Name="InventoryOrderID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PurchaseBillNo" Type="varchar" MaxLength="60" />
+          <Property Name="PurchaseDate" Type="date" />
+          <Property Name="SellerCompanyName" Type="varchar" MaxLength="600" />
+          <Property Name="SellerCompanyAddress" Type="varchar" MaxLength="1200" />
+          <Property Name="AmountPaid" Type="int" />
+          <Property Name="TotalOrderAmount" Type="int" />
+          <Property Name="AmountPaidDate" Type="date" />
+          <Property Name="BalanceAmount" Type="int" />
+          <Property Name="Remarks" Type="varchar" MaxLength="300" />
+          <Property Name="IsCompleted" Type="bit" />
+          <Property Name="CreatedBy" Type="varchar" MaxLength="100" />
+          <Property Name="CreatedDate" Type="date" />
+          <Property Name="ModifiedBy" Type="varchar" MaxLength="100" />
+          <Property Name="ModifiedDate" Type="date" />
+        </EntityType>
+        <EntityType Name="InventoryTypes">
+          <Key>
+            <PropertyRef Name="InventoryTypeId" />
+          </Key>
+          <Property Name="InventoryTypeId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="InventoryTypeName" Type="varchar" MaxLength="60" />
+          <Property Name="InventoryDescription" Type="varchar" MaxLength="200" />
+          <Property Name="UnitName" Type="varchar" MaxLength="60" />
+        </EntityType>
+        <EntityType Name="MstUnit">
+          <Key>
+            <PropertyRef Name="UnitID" />
+          </Key>
+          <Property Name="UnitID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UnitName" Type="varchar" MaxLength="60" />
+        </EntityType>
+        <EntityType Name="Role">
+          <Key>
+            <PropertyRef Name="RoleID" />
+          </Key>
+          <Property Name="RoleID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="RoleName" Type="varchar" MaxLength="60" />
+        </EntityType>
+        <EntityType Name="Salary">
+          <Key>
+            <PropertyRef Name="SalaryID" />
+          </Key>
+          <Property Name="SalaryID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="EmployeeID" Type="int" />
+          <Property Name="AmountPaidDate" Type="date" />
+          <Property Name="WorkAssignID" Type="int" />
+          <Property Name="TotalAmountToPay" Type="int" />
+          <Property Name="AmountPaid" Type="int" />
+          <Property Name="RemainingAmount" Type="int" />
+          <Property Name="Remarks" Type="varchar" MaxLength="600" />
+          <Property Name="CreatedBy" Type="varchar" MaxLength="60" />
+          <Property Name="CreatedDate" Type="date" />
+          <Property Name="ModifiedBy" Type="varchar" MaxLength="50" />
+          <Property Name="ModifiedDate" Type="date" />
+        </EntityType>
+        <EntityType Name="SaleOrderDetail">
+          <Key>
+            <PropertyRef Name="SaleOrderDetailID" />
+          </Key>
+          <Property Name="SaleOrderDetailID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="InventoryTypeID" Type="int" />
+          <Property Name="SellingRate" Type="int" />
+          <Property Name="Quantity" Type="int" />
+          <Property Name="UnitID" Type="int" />
+          <Property Name="TotalAmount" Type="int" />
+          <Property Name="SaleOrderID" Type="int" />
+          <Property Name="CreatedBy" Type="varchar" MaxLength="200" />
+          <Property Name="CreatedDate" Type="date" />
+          <Property Name="ModifiedBy" Type="varchar" MaxLength="200" />
+          <Property Name="ModifiedDate" Type="date" />
+        </EntityType>
+        <EntityType Name="SalesOrder">
+          <Key>
+            <PropertyRef Name="SaleOrderID" />
+          </Key>
+          <Property Name="SaleOrderID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="BillNo" Type="varchar" MaxLength="60" />
+          <Property Name="PersonName" Type="varchar" MaxLength="70" />
+          <Property Name="Mobile" Type="varchar" MaxLength="20" />
+          <Property Name="SchoolID" Type="int" />
+          <Property Name="CustomerTypeID" Type="int" />
+          <Property Name="PaidAmount" Type="int" />
+          <Property Name="RemainingAmount" Type="int" />
+          <Property Name="TotalCost" Type="int" />
+          <Property Name="SaleOrderDate" Type="date" />
+          <Property Name="Remarks" Type="varchar" MaxLength="300" />
+          <Property Name="IsMakingRequired" Type="bit" />
+          <Property Name="IsCompleted" Type="bit" />
+          <Property Name="CreatedBy" Type="varchar" MaxLength="60" />
+          <Property Name="CreatedDate" Type="date" />
+          <Property Name="ModifiedBy" Type="varchar" MaxLength="60" />
+          <Property Name="ModifiedDate" Type="date" />
+        </EntityType>
+        <EntityType Name="School">
+          <Key>
+            <PropertyRef Name="SchoolID" />
+          </Key>
+          <Property Name="SchoolID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="SchoolName" Type="varchar" MaxLength="700" />
+          <Property Name="SchoolMobileNumber" Type="varchar" MaxLength="30" />
+          <Property Name="SchoolAddrees" Type="varchar" MaxLength="700" />
+          <Property Name="SchoolEmail" Type="varchar" MaxLength="60" />
+          <Property Name="ContactPersonName" Type="varchar" MaxLength="60" />
+          <Property Name="ContactPersonMobileNo" Type="varchar" MaxLength="30" />
+          <Property Name="ContactPersonEmail" Type="varchar" MaxLength="60" />
+          <Property Name="Remarks" Type="varchar" MaxLength="600" />
+          <Property Name="CreatedBy" Type="varchar" MaxLength="20" />
+          <Property Name="CreatedOn" Type="date" />
+          <Property Name="ModifiedBy" Type="varchar" MaxLength="20" />
+          <Property Name="ModifiedOn" Type="date" />
+        </EntityType>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="UserID" />
+          </Key>
+          <Property Name="UserID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="EmployeeID" Type="int" />
+          <Property Name="UserName" Type="varchar" MaxLength="30" />
+          <Property Name="UserRoleTypeID" Type="int" />
+          <Property Name="Password" Type="varchar" MaxLength="20" />
+          <Property Name="IsActive" Type="bit" />
+          <Property Name="Remarks" Type="varchar" MaxLength="600" />
+          <Property Name="CreatedBy" Type="varchar" MaxLength="60" />
+          <Property Name="CreatedDate" Type="date" />
+          <Property Name="ModifiedBy" Type="varchar" MaxLength="60" />
+          <Property Name="ModifiedDate" Type="date" />
+        </EntityType>
+        <EntityType Name="WorkAssign">
+          <Key>
+            <PropertyRef Name="WorkAssignID" />
+          </Key>
+          <Property Name="WorkAssignID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="EmployeeID" Type="int" />
+          <Property Name="BillNo" Type="varchar" MaxLength="60" />
+          <Property Name="WorkTypeID" Type="int" />
+          <Property Name="WorkCount" Type="int" />
+          <Property Name="WorkAssignDate" Type="date" />
+          <Property Name="ExpectedCompletionDate" Type="date" />
+          <Property Name="CompletedCount" Type="int" />
+          <Property Name="IsComplete" Type="bit" />
+          <Property Name="Remarks" Type="varchar" MaxLength="600" />
+          <Property Name="CreatedBy" Type="varchar" MaxLength="60" />
+          <Property Name="ModifiedBy" Type="varchar" MaxLength="60" />
+          <Property Name="CreatedDate" Type="date" />
+          <Property Name="ModifiedDate" Type="date" />
+        </EntityType>
+        <EntityType Name="WorkAssignInventoryUsed">
+          <Key>
+            <PropertyRef Name="WorkAssignInventoryUsedID" />
+          </Key>
+          <Property Name="WorkAssignInventoryUsedID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="InventoryTypeID" Type="int" />
+          <Property Name="InventoryUsedCount" Type="int" />
+          <Property Name="WorkAssignID" Type="int" />
+          <Property Name="UnitID" Type="int" />
+        </EntityType>
+        <EntityType Name="WorkType">
+          <Key>
+            <PropertyRef Name="WorkTypeID" />
+          </Key>
+          <Property Name="WorkTypeID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="WorkTypeName" Type="varchar" MaxLength="60" />
+        </EntityType>
+        <EntityContainer Name="InventoryManagementModelStoreContainer">
+          <EntitySet Name="CapitalDetail" EntityType="Self.CapitalDetail" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CapitalType" EntityType="Self.CapitalType" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CustomerType" EntityType="Self.CustomerType" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DevelopmentWork" EntityType="Self.DevelopmentWork" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Employee" EntityType="Self.Employee" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Inventory" EntityType="Self.Inventory" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="InventoryOrderDetail" EntityType="Self.InventoryOrderDetail" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="InventoryOrders" EntityType="Self.InventoryOrders" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="InventoryTypes" EntityType="Self.InventoryTypes" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="MstUnit" EntityType="Self.MstUnit" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Role" EntityType="Self.Role" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Salary" EntityType="Self.Salary" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SaleOrderDetail" EntityType="Self.SaleOrderDetail" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SalesOrder" EntityType="Self.SalesOrder" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="School" EntityType="Self.School" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="User" EntityType="Self.User" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="WorkAssign" EntityType="Self.WorkAssign" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="WorkAssignInventoryUsed" EntityType="Self.WorkAssignInventoryUsed" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="WorkType" EntityType="Self.WorkType" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="InventoryManagementModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="CapitalDetail">
+          <Key>
+            <PropertyRef Name="CapitalDetailID" />
+          </Key>
+          <Property Name="CapitalDetailID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CapitalUseDate" Type="DateTime" Precision="0" />
+          <Property Name="CapitalTypeID" Type="Int32" />
+          <Property Name="Amount" Type="Int32" />
+          <Property Name="Remarks" Type="String" MaxLength="600" FixedLength="false" Unicode="false" />
+          <Property Name="SellBuyBillNo" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+          <Property Name="CreatedBy" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+          <Property Name="CreatedDate" Type="DateTime" Precision="0" />
+          <Property Name="ModifiedBy" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+          <Property Name="ModifiedDate" Type="DateTime" Precision="0" />
+        </EntityType>
+        <EntityType Name="CapitalType">
+          <Key>
+            <PropertyRef Name="CapitalTypeID" />
+          </Key>
+          <Property Name="CapitalTypeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CapitalTypeName" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="CustomerType">
+          <Key>
+            <PropertyRef Name="CustomerTypeID" />
+          </Key>
+          <Property Name="CustomerTypeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CustomerTypeName" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="DevelopmentWork">
+          <Key>
+            <PropertyRef Name="DevelopmentWorkID" />
+          </Key>
+          <Property Name="DevelopmentWorkID" Type="Int32" Nullable="false" />
+          <Property Name="SaleOrderID" Type="Int32" />
+          <Property Name="BillNo" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+          <Property Name="ConfirmDate" Type="DateTime" Precision="0" />
+          <Property Name="DeliveryDate" Type="DateTime" Precision="0" />
+          <Property Name="TopMeasurement" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="BottomMeasurement" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="DesignPhotoUrl" Type="String" MaxLength="600" FixedLength="false" Unicode="false" />
+          <Property Name="WorkTypeID" Type="Int32" />
+          <Property Name="CreatedBy" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+          <Property Name="CreatedDate" Type="DateTime" Precision="0" />
+          <Property Name="ModifiedBy" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+          <Property Name="ModifiedDate" Type="DateTime" Precision="0" />
+        </EntityType>
+        <EntityType Name="Employee">
+          <Key>
+            <PropertyRef Name="EmployeeID" />
+          </Key>
+          <Property Name="EmployeeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="EmployeeName" Type="String" MaxLength="700" FixedLength="false" Unicode="false" />
+          <Property Name="Mobile" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Email" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+          <Property Name="Address" Type="String" MaxLength="700" FixedLength="false" Unicode="false" />
+          <Property Name="JoiningDate" Type="DateTime" Precision="0" />
+          <Property Name="Detail" Type="String" MaxLength="700" FixedLength="false" Unicode="false" />
+          <Property Name="IsActive" Type="Boolean" />
+          <Property Name="CreatedBy" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+          <Property Name="CreatedDate" Type="DateTime" Precision="0" />
+          <Property Name="ModifiedBy" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+          <Property Name="ModifiedDate" Type="DateTime" Precision="0" />
+        </EntityType>
+        <EntityType Name="Inventory">
+          <Key>
+            <PropertyRef Name="InventoryID" />
+          </Key>
+          <Property Name="InventoryID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="InventoryTypeID" Type="Int32" />
+          <Property Name="NoOfItem" Type="Int32" />
+          <Property Name="PurchaseRate" Type="Int32" />
+          <Property Name="SellingRate" Type="Int32" />
+          <Property Name="UnitID" Type="Int32" />
+          <Property Name="IsFastRunning" Type="Boolean" />
+          <Property Name="Remarks" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+          <Property Name="CreatedBy" Type="String" MaxLength="600" FixedLength="false" Unicode="false" />
+          <Property Name="CreatedOn" Type="DateTime" Precision="0" />
+          <Property Name="UpdateBy" Type="String" MaxLength="600" FixedLength="false" Unicode="false" />
+          <Property Name="UpdatedOn" Type="DateTime" Precision="0" />
+        </EntityType>
+        <EntityType Name="InventoryOrderDetail">
+          <Key>
+            <PropertyRef Name="InventoryOrderDetailID" />
+          </Key>
+          <Property Name="InventoryOrderDetailID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="InventoryTypeID" Type="Int32" Nullable="false" />
+          <Property Name="PurchaseRate" Type="Int32" />
+          <Property Name="Quantity" Type="Int32" />
+          <Property Name="TotalItemsCost" Type="Int32" />
+          <Property Name="VatNo" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+          <Property Name="UnitID" Type="Int32" />
+          <Property Name="SaleRate" Type="Int32" />
+          <Property Name="BarcodeID" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="InventoryOrderID" Type="Int32" />
+          <Property Name="CreatedBy" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="CreatedDate" Type="DateTime" Precision="0" />
+          <Property Name="ModifiedBy" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="ModifiedDate" Type="DateTime" Precision="0" />
+        </EntityType>
+        <EntityType Name="InventoryOrder">
+          <Key>
+            <PropertyRef Name="InventoryOrderID" />
+          </Key>
+          <Property Name="InventoryOrderID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PurchaseBillNo" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+          <Property Name="PurchaseDate" Type="DateTime" Precision="0" />
+          <Property Name="SellerCompanyName" Type="String" MaxLength="600" FixedLength="false" Unicode="false" />
+          <Property Name="SellerCompanyAddress" Type="String" MaxLength="1200" FixedLength="false" Unicode="false" />
+          <Property Name="AmountPaid" Type="Int32" />
+          <Property Name="TotalOrderAmount" Type="Int32" />
+          <Property Name="AmountPaidDate" Type="DateTime" Precision="0" />
+          <Property Name="BalanceAmount" Type="Int32" />
+          <Property Name="Remarks" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+          <Property Name="IsCompleted" Type="Boolean" />
+          <Property Name="CreatedBy" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="CreatedDate" Type="DateTime" Precision="0" />
+          <Property Name="ModifiedBy" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="ModifiedDate" Type="DateTime" Precision="0" />
+        </EntityType>
+        <EntityType Name="InventoryType">
+          <Key>
+            <PropertyRef Name="InventoryTypeId" />
+          </Key>
+          <Property Name="InventoryTypeId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="InventoryTypeName" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+          <Property Name="InventoryDescription" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="UnitName" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="MstUnit">
+          <Key>
+            <PropertyRef Name="UnitID" />
+          </Key>
+          <Property Name="UnitID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UnitName" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Role">
+          <Key>
+            <PropertyRef Name="RoleID" />
+          </Key>
+          <Property Name="RoleID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="RoleName" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Salary">
+          <Key>
+            <PropertyRef Name="SalaryID" />
+          </Key>
+          <Property Name="SalaryID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="EmployeeID" Type="Int32" />
+          <Property Name="AmountPaidDate" Type="DateTime" Precision="0" />
+          <Property Name="WorkAssignID" Type="Int32" />
+          <Property Name="TotalAmountToPay" Type="Int32" />
+          <Property Name="AmountPaid" Type="Int32" />
+          <Property Name="RemainingAmount" Type="Int32" />
+          <Property Name="Remarks" Type="String" MaxLength="600" FixedLength="false" Unicode="false" />
+          <Property Name="CreatedBy" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+          <Property Name="CreatedDate" Type="DateTime" Precision="0" />
+          <Property Name="ModifiedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ModifiedDate" Type="DateTime" Precision="0" />
+        </EntityType>
+        <EntityType Name="SaleOrderDetail">
+          <Key>
+            <PropertyRef Name="SaleOrderDetailID" />
+          </Key>
+          <Property Name="SaleOrderDetailID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="InventoryTypeID" Type="Int32" />
+          <Property Name="SellingRate" Type="Int32" />
+          <Property Name="Quantity" Type="Int32" />
+          <Property Name="UnitID" Type="Int32" />
+          <Property Name="TotalAmount" Type="Int32" />
+          <Property Name="SaleOrderID" Type="Int32" />
+          <Property Name="CreatedBy" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="CreatedDate" Type="DateTime" Precision="0" />
+          <Property Name="ModifiedBy" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="ModifiedDate" Type="DateTime" Precision="0" />
+        </EntityType>
+        <EntityType Name="SalesOrder">
+          <Key>
+            <PropertyRef Name="SaleOrderID" />
+          </Key>
+          <Property Name="SaleOrderID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="BillNo" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+          <Property Name="PersonName" Type="String" MaxLength="70" FixedLength="false" Unicode="false" />
+          <Property Name="Mobile" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="SchoolID" Type="Int32" />
+          <Property Name="CustomerTypeID" Type="Int32" />
+          <Property Name="PaidAmount" Type="Int32" />
+          <Property Name="RemainingAmount" Type="Int32" />
+          <Property Name="TotalCost" Type="Int32" />
+          <Property Name="SaleOrderDate" Type="DateTime" Precision="0" />
+          <Property Name="Remarks" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+          <Property Name="IsMakingRequired" Type="Boolean" />
+          <Property Name="IsCompleted" Type="Boolean" />
+          <Property Name="CreatedBy" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+          <Property Name="CreatedDate" Type="DateTime" Precision="0" />
+          <Property Name="ModifiedBy" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+          <Property Name="ModifiedDate" Type="DateTime" Precision="0" />
+        </EntityType>
+        <EntityType Name="School">
+          <Key>
+            <PropertyRef Name="SchoolID" />
+          </Key>
+          <Property Name="SchoolID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SchoolName" Type="String" MaxLength="700" FixedLength="false" Unicode="false" />
+          <Property Name="SchoolMobileNumber" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="SchoolAddrees" Type="String" MaxLength="700" FixedLength="false" Unicode="false" />
+          <Property Name="SchoolEmail" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+          <Property Name="ContactPersonName" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+          <Property Name="ContactPersonMobileNo" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="ContactPersonEmail" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+          <Property Name="Remarks" Type="String" MaxLength="600" FixedLength="false" Unicode="false" />
+          <Property Name="CreatedBy" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="CreatedOn" Type="DateTime" Precision="0" />
+          <Property Name="ModifiedBy" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="ModifiedOn" Type="DateTime" Precision="0" />
+        </EntityType>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="UserID" />
+          </Key>
+          <Property Name="UserID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="EmployeeID" Type="Int32" />
+          <Property Name="UserName" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="UserRoleTypeID" Type="Int32" />
+          <Property Name="Password" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="IsActive" Type="Boolean" />
+          <Property Name="Remarks" Type="String" MaxLength="600" FixedLength="false" Unicode="false" />
+          <Property Name="CreatedBy" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+          <Property Name="CreatedDate" Type="DateTime" Precision="0" />
+          <Property Name="ModifiedBy" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+          <Property Name="ModifiedDate" Type="DateTime" Precision="0" />
+        </EntityType>
+        <EntityType Name="WorkAssign">
+          <Key>
+            <PropertyRef Name="WorkAssignID" />
+          </Key>
+          <Property Name="WorkAssignID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="EmployeeID" Type="Int32" />
+          <Property Name="BillNo" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+          <Property Name="WorkTypeID" Type="Int32" />
+          <Property Name="WorkCount" Type="Int32" />
+          <Property Name="WorkAssignDate" Type="DateTime" Precision="0" />
+          <Property Name="ExpectedCompletionDate" Type="DateTime" Precision="0" />
+          <Property Name="CompletedCount" Type="Int32" />
+          <Property Name="IsComplete" Type="Boolean" />
+          <Property Name="Remarks" Type="String" MaxLength="600" FixedLength="false" Unicode="false" />
+          <Property Name="CreatedBy" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+          <Property Name="ModifiedBy" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+          <Property Name="CreatedDate" Type="DateTime" Precision="0" />
+          <Property Name="ModifiedDate" Type="DateTime" Precision="0" />
+        </EntityType>
+        <EntityType Name="WorkAssignInventoryUsed">
+          <Key>
+            <PropertyRef Name="WorkAssignInventoryUsedID" />
+          </Key>
+          <Property Name="WorkAssignInventoryUsedID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="InventoryTypeID" Type="Int32" />
+          <Property Name="InventoryUsedCount" Type="Int32" />
+          <Property Name="WorkAssignID" Type="Int32" />
+          <Property Name="UnitID" Type="Int32" />
+        </EntityType>
+        <EntityType Name="WorkType">
+          <Key>
+            <PropertyRef Name="WorkTypeID" />
+          </Key>
+          <Property Name="WorkTypeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="WorkTypeName" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityContainer Name="InventoryManagementEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="CapitalDetails" EntityType="Self.CapitalDetail" />
+          <EntitySet Name="CapitalTypes" EntityType="Self.CapitalType" />
+          <EntitySet Name="CustomerTypes" EntityType="Self.CustomerType" />
+          <EntitySet Name="DevelopmentWorks" EntityType="Self.DevelopmentWork" />
+          <EntitySet Name="Employees" EntityType="Self.Employee" />
+          <EntitySet Name="Inventories" EntityType="Self.Inventory" />
+          <EntitySet Name="InventoryOrderDetails" EntityType="Self.InventoryOrderDetail" />
+          <EntitySet Name="InventoryOrders" EntityType="Self.InventoryOrder" />
+          <EntitySet Name="InventoryTypes" EntityType="Self.InventoryType" />
+          <EntitySet Name="MstUnits" EntityType="Self.MstUnit" />
+          <EntitySet Name="Roles" EntityType="Self.Role" />
+          <EntitySet Name="Salaries" EntityType="Self.Salary" />
+          <EntitySet Name="SaleOrderDetails" EntityType="Self.SaleOrderDetail" />
+          <EntitySet Name="SalesOrders" EntityType="Self.SalesOrder" />
+          <EntitySet Name="Schools" EntityType="Self.School" />
+          <EntitySet Name="Users" EntityType="Self.User" />
+          <EntitySet Name="WorkAssigns" EntityType="Self.WorkAssign" />
+          <EntitySet Name="WorkAssignInventoryUseds" EntityType="Self.WorkAssignInventoryUsed" />
+          <EntitySet Name="WorkTypes" EntityType="Self.WorkType" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="InventoryManagementModelStoreContainer" CdmEntityContainer="InventoryManagementEntities">
+          <EntitySetMapping Name="CapitalDetails">
+            <EntityTypeMapping TypeName="InventoryManagementModel.CapitalDetail">
+              <MappingFragment StoreEntitySet="CapitalDetail">
+                <ScalarProperty Name="CapitalDetailID" ColumnName="CapitalDetailID" />
+                <ScalarProperty Name="CapitalUseDate" ColumnName="CapitalUseDate" />
+                <ScalarProperty Name="CapitalTypeID" ColumnName="CapitalTypeID" />
+                <ScalarProperty Name="Amount" ColumnName="Amount" />
+                <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+                <ScalarProperty Name="SellBuyBillNo" ColumnName="SellBuyBillNo" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+                <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CapitalTypes">
+            <EntityTypeMapping TypeName="InventoryManagementModel.CapitalType">
+              <MappingFragment StoreEntitySet="CapitalType">
+                <ScalarProperty Name="CapitalTypeID" ColumnName="CapitalTypeID" />
+                <ScalarProperty Name="CapitalTypeName" ColumnName="CapitalTypeName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CustomerTypes">
+            <EntityTypeMapping TypeName="InventoryManagementModel.CustomerType">
+              <MappingFragment StoreEntitySet="CustomerType">
+                <ScalarProperty Name="CustomerTypeID" ColumnName="CustomerTypeID" />
+                <ScalarProperty Name="CustomerTypeName" ColumnName="CustomerTypeName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DevelopmentWorks">
+            <EntityTypeMapping TypeName="InventoryManagementModel.DevelopmentWork">
+              <MappingFragment StoreEntitySet="DevelopmentWork">
+                <ScalarProperty Name="DevelopmentWorkID" ColumnName="DevelopmentWorkID" />
+                <ScalarProperty Name="SaleOrderID" ColumnName="SaleOrderID" />
+                <ScalarProperty Name="BillNo" ColumnName="BillNo" />
+                <ScalarProperty Name="ConfirmDate" ColumnName="ConfirmDate" />
+                <ScalarProperty Name="DeliveryDate" ColumnName="DeliveryDate" />
+                <ScalarProperty Name="TopMeasurement" ColumnName="TopMeasurement" />
+                <ScalarProperty Name="BottomMeasurement" ColumnName="BottomMeasurement" />
+                <ScalarProperty Name="DesignPhotoUrl" ColumnName="DesignPhotoUrl" />
+                <ScalarProperty Name="WorkTypeID" ColumnName="WorkTypeID" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+                <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Employees">
+            <EntityTypeMapping TypeName="InventoryManagementModel.Employee">
+              <MappingFragment StoreEntitySet="Employee">
+                <ScalarProperty Name="EmployeeID" ColumnName="EmployeeID" />
+                <ScalarProperty Name="EmployeeName" ColumnName="EmployeeName" />
+                <ScalarProperty Name="Mobile" ColumnName="Mobile" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="JoiningDate" ColumnName="JoiningDate" />
+                <ScalarProperty Name="Detail" ColumnName="Detail" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+                <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Inventories">
+            <EntityTypeMapping TypeName="InventoryManagementModel.Inventory">
+              <MappingFragment StoreEntitySet="Inventory">
+                <ScalarProperty Name="InventoryID" ColumnName="InventoryID" />
+                <ScalarProperty Name="InventoryTypeID" ColumnName="InventoryTypeID" />
+                <ScalarProperty Name="NoOfItem" ColumnName="NoOfItem" />
+                <ScalarProperty Name="PurchaseRate" ColumnName="PurchaseRate" />
+                <ScalarProperty Name="SellingRate" ColumnName="SellingRate" />
+                <ScalarProperty Name="UnitID" ColumnName="UnitID" />
+                <ScalarProperty Name="IsFastRunning" ColumnName="IsFastRunning" />
+                <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+                <ScalarProperty Name="UpdateBy" ColumnName="UpdateBy" />
+                <ScalarProperty Name="UpdatedOn" ColumnName="UpdatedOn" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="InventoryOrderDetails">
+            <EntityTypeMapping TypeName="InventoryManagementModel.InventoryOrderDetail">
+              <MappingFragment StoreEntitySet="InventoryOrderDetail">
+                <ScalarProperty Name="InventoryOrderDetailID" ColumnName="InventoryOrderDetailID" />
+                <ScalarProperty Name="InventoryTypeID" ColumnName="InventoryTypeID" />
+                <ScalarProperty Name="PurchaseRate" ColumnName="PurchaseRate" />
+                <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+                <ScalarProperty Name="TotalItemsCost" ColumnName="TotalItemsCost" />
+                <ScalarProperty Name="VatNo" ColumnName="VatNo" />
+                <ScalarProperty Name="UnitID" ColumnName="UnitID" />
+                <ScalarProperty Name="SaleRate" ColumnName="SaleRate" />
+                <ScalarProperty Name="BarcodeID" ColumnName="BarcodeID" />
+                <ScalarProperty Name="InventoryOrderID" ColumnName="InventoryOrderID" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+                <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="InventoryOrders">
+            <EntityTypeMapping TypeName="InventoryManagementModel.InventoryOrder">
+              <MappingFragment StoreEntitySet="InventoryOrders">
+                <ScalarProperty Name="InventoryOrderID" ColumnName="InventoryOrderID" />
+                <ScalarProperty Name="PurchaseBillNo" ColumnName="PurchaseBillNo" />
+                <ScalarProperty Name="PurchaseDate" ColumnName="PurchaseDate" />
+                <ScalarProperty Name="SellerCompanyName" ColumnName="SellerCompanyName" />
+                <ScalarProperty Name="SellerCompanyAddress" ColumnName="SellerCompanyAddress" />
+                <ScalarProperty Name="AmountPaid" ColumnName="AmountPaid" />
+                <ScalarProperty Name="TotalOrderAmount" ColumnName="TotalOrderAmount" />
+                <ScalarProperty Name="AmountPaidDate" ColumnName="AmountPaidDate" />
+                <ScalarProperty Name="BalanceAmount" ColumnName="BalanceAmount" />
+                <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+                <ScalarProperty Name="IsCompleted" ColumnName="IsCompleted" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+                <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="InventoryTypes">
+            <EntityTypeMapping TypeName="InventoryManagementModel.InventoryType">
+              <MappingFragment StoreEntitySet="InventoryTypes">
+                <ScalarProperty Name="InventoryTypeId" ColumnName="InventoryTypeId" />
+                <ScalarProperty Name="InventoryTypeName" ColumnName="InventoryTypeName" />
+                <ScalarProperty Name="InventoryDescription" ColumnName="InventoryDescription" />
+                <ScalarProperty Name="UnitName" ColumnName="UnitName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MstUnits">
+            <EntityTypeMapping TypeName="InventoryManagementModel.MstUnit">
+              <MappingFragment StoreEntitySet="MstUnit">
+                <ScalarProperty Name="UnitID" ColumnName="UnitID" />
+                <ScalarProperty Name="UnitName" ColumnName="UnitName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Roles">
+            <EntityTypeMapping TypeName="InventoryManagementModel.Role">
+              <MappingFragment StoreEntitySet="Role">
+                <ScalarProperty Name="RoleID" ColumnName="RoleID" />
+                <ScalarProperty Name="RoleName" ColumnName="RoleName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Salaries">
+            <EntityTypeMapping TypeName="InventoryManagementModel.Salary">
+              <MappingFragment StoreEntitySet="Salary">
+                <ScalarProperty Name="SalaryID" ColumnName="SalaryID" />
+                <ScalarProperty Name="EmployeeID" ColumnName="EmployeeID" />
+                <ScalarProperty Name="AmountPaidDate" ColumnName="AmountPaidDate" />
+                <ScalarProperty Name="WorkAssignID" ColumnName="WorkAssignID" />
+                <ScalarProperty Name="TotalAmountToPay" ColumnName="TotalAmountToPay" />
+                <ScalarProperty Name="AmountPaid" ColumnName="AmountPaid" />
+                <ScalarProperty Name="RemainingAmount" ColumnName="RemainingAmount" />
+                <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+                <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SaleOrderDetails">
+            <EntityTypeMapping TypeName="InventoryManagementModel.SaleOrderDetail">
+              <MappingFragment StoreEntitySet="SaleOrderDetail">
+                <ScalarProperty Name="SaleOrderDetailID" ColumnName="SaleOrderDetailID" />
+                <ScalarProperty Name="InventoryTypeID" ColumnName="InventoryTypeID" />
+                <ScalarProperty Name="SellingRate" ColumnName="SellingRate" />
+                <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+                <ScalarProperty Name="UnitID" ColumnName="UnitID" />
+                <ScalarProperty Name="TotalAmount" ColumnName="TotalAmount" />
+                <ScalarProperty Name="SaleOrderID" ColumnName="SaleOrderID" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+                <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SalesOrders">
+            <EntityTypeMapping TypeName="InventoryManagementModel.SalesOrder">
+              <MappingFragment StoreEntitySet="SalesOrder">
+                <ScalarProperty Name="SaleOrderID" ColumnName="SaleOrderID" />
+                <ScalarProperty Name="BillNo" ColumnName="BillNo" />
+                <ScalarProperty Name="PersonName" ColumnName="PersonName" />
+                <ScalarProperty Name="Mobile" ColumnName="Mobile" />
+                <ScalarProperty Name="SchoolID" ColumnName="SchoolID" />
+                <ScalarProperty Name="CustomerTypeID" ColumnName="CustomerTypeID" />
+                <ScalarProperty Name="PaidAmount" ColumnName="PaidAmount" />
+                <ScalarProperty Name="RemainingAmount" ColumnName="RemainingAmount" />
+                <ScalarProperty Name="TotalCost" ColumnName="TotalCost" />
+                <ScalarProperty Name="SaleOrderDate" ColumnName="SaleOrderDate" />
+                <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+                <ScalarProperty Name="IsMakingRequired" ColumnName="IsMakingRequired" />
+                <ScalarProperty Name="IsCompleted" ColumnName="IsCompleted" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+                <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Schools">
+            <EntityTypeMapping TypeName="InventoryManagementModel.School">
+              <MappingFragment StoreEntitySet="School">
+                <ScalarProperty Name="SchoolID" ColumnName="SchoolID" />
+                <ScalarProperty Name="SchoolName" ColumnName="SchoolName" />
+                <ScalarProperty Name="SchoolMobileNumber" ColumnName="SchoolMobileNumber" />
+                <ScalarProperty Name="SchoolAddrees" ColumnName="SchoolAddrees" />
+                <ScalarProperty Name="SchoolEmail" ColumnName="SchoolEmail" />
+                <ScalarProperty Name="ContactPersonName" ColumnName="ContactPersonName" />
+                <ScalarProperty Name="ContactPersonMobileNo" ColumnName="ContactPersonMobileNo" />
+                <ScalarProperty Name="ContactPersonEmail" ColumnName="ContactPersonEmail" />
+                <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+                <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+                <ScalarProperty Name="ModifiedOn" ColumnName="ModifiedOn" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Users">
+            <EntityTypeMapping TypeName="InventoryManagementModel.User">
+              <MappingFragment StoreEntitySet="User">
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+                <ScalarProperty Name="EmployeeID" ColumnName="EmployeeID" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="UserRoleTypeID" ColumnName="UserRoleTypeID" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+                <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="WorkAssigns">
+            <EntityTypeMapping TypeName="InventoryManagementModel.WorkAssign">
+              <MappingFragment StoreEntitySet="WorkAssign">
+                <ScalarProperty Name="WorkAssignID" ColumnName="WorkAssignID" />
+                <ScalarProperty Name="EmployeeID" ColumnName="EmployeeID" />
+                <ScalarProperty Name="BillNo" ColumnName="BillNo" />
+                <ScalarProperty Name="WorkTypeID" ColumnName="WorkTypeID" />
+                <ScalarProperty Name="WorkCount" ColumnName="WorkCount" />
+                <ScalarProperty Name="WorkAssignDate" ColumnName="WorkAssignDate" />
+                <ScalarProperty Name="ExpectedCompletionDate" ColumnName="ExpectedCompletionDate" />
+                <ScalarProperty Name="CompletedCount" ColumnName="CompletedCount" />
+                <ScalarProperty Name="IsComplete" ColumnName="IsComplete" />
+                <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="WorkAssignInventoryUseds">
+            <EntityTypeMapping TypeName="InventoryManagementModel.WorkAssignInventoryUsed">
+              <MappingFragment StoreEntitySet="WorkAssignInventoryUsed">
+                <ScalarProperty Name="WorkAssignInventoryUsedID" ColumnName="WorkAssignInventoryUsedID" />
+                <ScalarProperty Name="InventoryTypeID" ColumnName="InventoryTypeID" />
+                <ScalarProperty Name="InventoryUsedCount" ColumnName="InventoryUsedCount" />
+                <ScalarProperty Name="WorkAssignID" ColumnName="WorkAssignID" />
+                <ScalarProperty Name="UnitID" ColumnName="UnitID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="WorkTypes">
+            <EntityTypeMapping TypeName="InventoryManagementModel.WorkType">
+              <MappingFragment StoreEntitySet="WorkType">
+                <ScalarProperty Name="WorkTypeID" ColumnName="WorkTypeID" />
+                <ScalarProperty Name="WorkTypeName" ColumnName="WorkTypeName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="true" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

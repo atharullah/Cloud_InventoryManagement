@@ -1,0 +1,292 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="InventoryManagementModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="CapitalDetail">
+    <Key>
+      <PropertyRef Name="CapitalDetailID" />
+    </Key>
+    <Property Name="CapitalDetailID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CapitalUseDate" Type="date" />
+    <Property Name="CapitalTypeID" Type="int" />
+    <Property Name="Amount" Type="int" />
+    <Property Name="Remarks" Type="varchar" MaxLength="600" />
+    <Property Name="SellBuyBillNo" Type="varchar" MaxLength="60" />
+    <Property Name="CreatedBy" Type="varchar" MaxLength="60" />
+    <Property Name="CreatedDate" Type="date" />
+    <Property Name="ModifiedBy" Type="varchar" MaxLength="60" />
+    <Property Name="ModifiedDate" Type="date" />
+  </EntityType>
+  <EntityType Name="CapitalType">
+    <Key>
+      <PropertyRef Name="CapitalTypeID" />
+    </Key>
+    <Property Name="CapitalTypeID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CapitalTypeName" Type="varchar" MaxLength="60" />
+  </EntityType>
+  <EntityType Name="CustomerType">
+    <Key>
+      <PropertyRef Name="CustomerTypeID" />
+    </Key>
+    <Property Name="CustomerTypeID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CustomerTypeName" Type="varchar" MaxLength="60" />
+  </EntityType>
+  <EntityType Name="DevelopmentWork">
+    <Key>
+      <PropertyRef Name="DevelopmentWorkID" />
+    </Key>
+    <Property Name="DevelopmentWorkID" Type="int" Nullable="false" />
+    <Property Name="SaleOrderID" Type="int" />
+    <Property Name="BillNo" Type="varchar" MaxLength="60" />
+    <Property Name="ConfirmDate" Type="date" />
+    <Property Name="DeliveryDate" Type="date" />
+    <Property Name="TopMeasurement" Type="varchar" MaxLength="100" />
+    <Property Name="BottomMeasurement" Type="varchar" MaxLength="100" />
+    <Property Name="DesignPhotoUrl" Type="varchar" MaxLength="600" />
+    <Property Name="WorkTypeID" Type="int" />
+    <Property Name="CreatedBy" Type="varchar" MaxLength="60" />
+    <Property Name="CreatedDate" Type="date" />
+    <Property Name="ModifiedBy" Type="varchar" MaxLength="60" />
+    <Property Name="ModifiedDate" Type="date" />
+  </EntityType>
+  <EntityType Name="Employee">
+    <Key>
+      <PropertyRef Name="EmployeeID" />
+    </Key>
+    <Property Name="EmployeeID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="EmployeeName" Type="varchar" MaxLength="700" />
+    <Property Name="Mobile" Type="varchar" MaxLength="20" />
+    <Property Name="Email" Type="varchar" MaxLength="60" />
+    <Property Name="Address" Type="varchar" MaxLength="700" />
+    <Property Name="JoiningDate" Type="date" />
+    <Property Name="Detail" Type="varchar" MaxLength="700" />
+    <Property Name="IsActive" Type="bit" />
+    <Property Name="CreatedBy" Type="varchar" MaxLength="60" />
+    <Property Name="CreatedDate" Type="date" />
+    <Property Name="ModifiedBy" Type="varchar" MaxLength="60" />
+    <Property Name="ModifiedDate" Type="date" />
+  </EntityType>
+  <EntityType Name="Inventory">
+    <Key>
+      <PropertyRef Name="InventoryID" />
+    </Key>
+    <Property Name="InventoryID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="InventoryTypeID" Type="int" />
+    <Property Name="NoOfItem" Type="int" />
+    <Property Name="PurchaseRate" Type="int" />
+    <Property Name="SellingRate" Type="int" />
+    <Property Name="UnitID" Type="int" />
+    <Property Name="IsFastRunning" Type="bit" />
+    <Property Name="Remarks" Type="varchar" MaxLength="60" />
+    <Property Name="CreatedBy" Type="varchar" MaxLength="600" />
+    <Property Name="CreatedOn" Type="date" />
+    <Property Name="UpdateBy" Type="varchar" MaxLength="600" />
+    <Property Name="UpdatedOn" Type="date" />
+  </EntityType>
+  <EntityType Name="InventoryOrderDetail">
+    <Key>
+      <PropertyRef Name="InventoryOrderDetailID" />
+    </Key>
+    <Property Name="InventoryOrderDetailID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="InventoryTypeID" Type="int" Nullable="false" />
+    <Property Name="PurchaseRate" Type="int" />
+    <Property Name="Quantity" Type="int" />
+    <Property Name="TotalItemsCost" Type="int" />
+    <Property Name="VatNo" Type="varchar" MaxLength="60" />
+    <Property Name="UnitID" Type="int" />
+    <Property Name="SaleRate" Type="int" />
+    <Property Name="BarcodeID" Type="varchar" MaxLength="200" />
+    <Property Name="InventoryOrderID" Type="int" />
+    <Property Name="CreatedBy" Type="varchar" MaxLength="100" />
+    <Property Name="CreatedDate" Type="date" />
+    <Property Name="ModifiedBy" Type="varchar" MaxLength="100" />
+    <Property Name="ModifiedDate" Type="date" />
+  </EntityType>
+  <EntityType Name="InventoryOrders">
+    <Key>
+      <PropertyRef Name="InventoryOrderID" />
+    </Key>
+    <Property Name="InventoryOrderID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PurchaseBillNo" Type="varchar" MaxLength="60" />
+    <Property Name="PurchaseDate" Type="date" />
+    <Property Name="SellerCompanyName" Type="varchar" MaxLength="600" />
+    <Property Name="SellerCompanyAddress" Type="varchar" MaxLength="1200" />
+    <Property Name="AmountPaid" Type="int" />
+    <Property Name="TotalOrderAmount" Type="int" />
+    <Property Name="AmountPaidDate" Type="date" />
+    <Property Name="BalanceAmount" Type="int" />
+    <Property Name="Remarks" Type="varchar" MaxLength="300" />
+    <Property Name="IsCompleted" Type="bit" />
+    <Property Name="CreatedBy" Type="varchar" MaxLength="100" />
+    <Property Name="CreatedDate" Type="date" />
+    <Property Name="ModifiedBy" Type="varchar" MaxLength="100" />
+    <Property Name="ModifiedDate" Type="date" />
+  </EntityType>
+  <EntityType Name="InventoryTypes">
+    <Key>
+      <PropertyRef Name="InventoryTypeId" />
+    </Key>
+    <Property Name="InventoryTypeId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="InventoryTypeName" Type="varchar" MaxLength="60" />
+    <Property Name="InventoryDescription" Type="varchar" MaxLength="200" />
+    <Property Name="UnitName" Type="varchar" MaxLength="60" />
+  </EntityType>
+  <EntityType Name="MstUnit">
+    <Key>
+      <PropertyRef Name="UnitID" />
+    </Key>
+    <Property Name="UnitID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UnitName" Type="varchar" MaxLength="60" />
+  </EntityType>
+  <EntityType Name="Role">
+    <Key>
+      <PropertyRef Name="RoleID" />
+    </Key>
+    <Property Name="RoleID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="RoleName" Type="varchar" MaxLength="60" />
+  </EntityType>
+  <EntityType Name="Salary">
+    <Key>
+      <PropertyRef Name="SalaryID" />
+    </Key>
+    <Property Name="SalaryID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="EmployeeID" Type="int" />
+    <Property Name="AmountPaidDate" Type="date" />
+    <Property Name="WorkAssignID" Type="int" />
+    <Property Name="TotalAmountToPay" Type="int" />
+    <Property Name="AmountPaid" Type="int" />
+    <Property Name="RemainingAmount" Type="int" />
+    <Property Name="Remarks" Type="varchar" MaxLength="600" />
+    <Property Name="CreatedBy" Type="varchar" MaxLength="60" />
+    <Property Name="CreatedDate" Type="date" />
+    <Property Name="ModifiedBy" Type="varchar" MaxLength="50" />
+    <Property Name="ModifiedDate" Type="date" />
+  </EntityType>
+  <EntityType Name="SaleOrderDetail">
+    <Key>
+      <PropertyRef Name="SaleOrderDetailID" />
+    </Key>
+    <Property Name="SaleOrderDetailID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="InventoryTypeID" Type="int" />
+    <Property Name="SellingRate" Type="int" />
+    <Property Name="Quantity" Type="int" />
+    <Property Name="UnitID" Type="int" />
+    <Property Name="TotalAmount" Type="int" />
+    <Property Name="SaleOrderID" Type="int" />
+    <Property Name="CreatedBy" Type="varchar" MaxLength="200" />
+    <Property Name="CreatedDate" Type="date" />
+    <Property Name="ModifiedBy" Type="varchar" MaxLength="200" />
+    <Property Name="ModifiedDate" Type="date" />
+  </EntityType>
+  <EntityType Name="SalesOrder">
+    <Key>
+      <PropertyRef Name="SaleOrderID" />
+    </Key>
+    <Property Name="SaleOrderID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="BillNo" Type="varchar" MaxLength="60" />
+    <Property Name="PersonName" Type="varchar" MaxLength="70" />
+    <Property Name="Mobile" Type="varchar" MaxLength="20" />
+    <Property Name="SchoolID" Type="int" />
+    <Property Name="CustomerTypeID" Type="int" />
+    <Property Name="PaidAmount" Type="int" />
+    <Property Name="RemainingAmount" Type="int" />
+    <Property Name="TotalCost" Type="int" />
+    <Property Name="SaleOrderDate" Type="date" />
+    <Property Name="Remarks" Type="varchar" MaxLength="300" />
+    <Property Name="IsMakingRequired" Type="bit" />
+    <Property Name="IsCompleted" Type="bit" />
+    <Property Name="CreatedBy" Type="varchar" MaxLength="60" />
+    <Property Name="CreatedDate" Type="date" />
+    <Property Name="ModifiedBy" Type="varchar" MaxLength="60" />
+    <Property Name="ModifiedDate" Type="date" />
+  </EntityType>
+  <EntityType Name="School">
+    <Key>
+      <PropertyRef Name="SchoolID" />
+    </Key>
+    <Property Name="SchoolID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SchoolName" Type="varchar" MaxLength="700" />
+    <Property Name="SchoolMobileNumber" Type="varchar" MaxLength="30" />
+    <Property Name="SchoolAddrees" Type="varchar" MaxLength="700" />
+    <Property Name="SchoolEmail" Type="varchar" MaxLength="60" />
+    <Property Name="ContactPersonName" Type="varchar" MaxLength="60" />
+    <Property Name="ContactPersonMobileNo" Type="varchar" MaxLength="30" />
+    <Property Name="ContactPersonEmail" Type="varchar" MaxLength="60" />
+    <Property Name="Remarks" Type="varchar" MaxLength="600" />
+    <Property Name="CreatedBy" Type="varchar" MaxLength="20" />
+    <Property Name="CreatedOn" Type="date" />
+    <Property Name="ModifiedBy" Type="varchar" MaxLength="20" />
+    <Property Name="ModifiedOn" Type="date" />
+  </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="UserID" />
+    </Key>
+    <Property Name="UserID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="EmployeeID" Type="int" />
+    <Property Name="UserName" Type="varchar" MaxLength="30" />
+    <Property Name="UserRoleTypeID" Type="int" />
+    <Property Name="Password" Type="varchar" MaxLength="20" />
+    <Property Name="IsActive" Type="bit" />
+    <Property Name="Remarks" Type="varchar" MaxLength="600" />
+    <Property Name="CreatedBy" Type="varchar" MaxLength="60" />
+    <Property Name="CreatedDate" Type="date" />
+    <Property Name="ModifiedBy" Type="varchar" MaxLength="60" />
+    <Property Name="ModifiedDate" Type="date" />
+  </EntityType>
+  <EntityType Name="WorkAssign">
+    <Key>
+      <PropertyRef Name="WorkAssignID" />
+    </Key>
+    <Property Name="WorkAssignID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="EmployeeID" Type="int" />
+    <Property Name="BillNo" Type="varchar" MaxLength="60" />
+    <Property Name="WorkTypeID" Type="int" />
+    <Property Name="WorkCount" Type="int" />
+    <Property Name="WorkAssignDate" Type="date" />
+    <Property Name="ExpectedCompletionDate" Type="date" />
+    <Property Name="CompletedCount" Type="int" />
+    <Property Name="IsComplete" Type="bit" />
+    <Property Name="Remarks" Type="varchar" MaxLength="600" />
+    <Property Name="CreatedBy" Type="varchar" MaxLength="60" />
+    <Property Name="ModifiedBy" Type="varchar" MaxLength="60" />
+    <Property Name="CreatedDate" Type="date" />
+    <Property Name="ModifiedDate" Type="date" />
+  </EntityType>
+  <EntityType Name="WorkAssignInventoryUsed">
+    <Key>
+      <PropertyRef Name="WorkAssignInventoryUsedID" />
+    </Key>
+    <Property Name="WorkAssignInventoryUsedID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="InventoryTypeID" Type="int" />
+    <Property Name="InventoryUsedCount" Type="int" />
+    <Property Name="WorkAssignID" Type="int" />
+    <Property Name="UnitID" Type="int" />
+  </EntityType>
+  <EntityType Name="WorkType">
+    <Key>
+      <PropertyRef Name="WorkTypeID" />
+    </Key>
+    <Property Name="WorkTypeID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="WorkTypeName" Type="varchar" MaxLength="60" />
+  </EntityType>
+  <EntityContainer Name="InventoryManagementModelStoreContainer">
+    <EntitySet Name="CapitalDetail" EntityType="Self.CapitalDetail" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CapitalType" EntityType="Self.CapitalType" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CustomerType" EntityType="Self.CustomerType" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DevelopmentWork" EntityType="Self.DevelopmentWork" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Employee" EntityType="Self.Employee" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Inventory" EntityType="Self.Inventory" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="InventoryOrderDetail" EntityType="Self.InventoryOrderDetail" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="InventoryOrders" EntityType="Self.InventoryOrders" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="InventoryTypes" EntityType="Self.InventoryTypes" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MstUnit" EntityType="Self.MstUnit" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Role" EntityType="Self.Role" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Salary" EntityType="Self.Salary" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SaleOrderDetail" EntityType="Self.SaleOrderDetail" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SalesOrder" EntityType="Self.SalesOrder" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="School" EntityType="Self.School" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="User" EntityType="Self.User" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="WorkAssign" EntityType="Self.WorkAssign" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="WorkAssignInventoryUsed" EntityType="Self.WorkAssignInventoryUsed" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="WorkType" EntityType="Self.WorkType" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

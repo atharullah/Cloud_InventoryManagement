@@ -1,0 +1,292 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="InventoryManagementModelStoreContainer" CdmEntityContainer="InventoryManagementEntities">
+    <EntitySetMapping Name="CapitalDetails">
+      <EntityTypeMapping TypeName="InventoryManagementModel.CapitalDetail">
+        <MappingFragment StoreEntitySet="CapitalDetail">
+          <ScalarProperty Name="CapitalDetailID" ColumnName="CapitalDetailID" />
+          <ScalarProperty Name="CapitalUseDate" ColumnName="CapitalUseDate" />
+          <ScalarProperty Name="CapitalTypeID" ColumnName="CapitalTypeID" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+          <ScalarProperty Name="SellBuyBillNo" ColumnName="SellBuyBillNo" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CapitalTypes">
+      <EntityTypeMapping TypeName="InventoryManagementModel.CapitalType">
+        <MappingFragment StoreEntitySet="CapitalType">
+          <ScalarProperty Name="CapitalTypeID" ColumnName="CapitalTypeID" />
+          <ScalarProperty Name="CapitalTypeName" ColumnName="CapitalTypeName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CustomerTypes">
+      <EntityTypeMapping TypeName="InventoryManagementModel.CustomerType">
+        <MappingFragment StoreEntitySet="CustomerType">
+          <ScalarProperty Name="CustomerTypeID" ColumnName="CustomerTypeID" />
+          <ScalarProperty Name="CustomerTypeName" ColumnName="CustomerTypeName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DevelopmentWorks">
+      <EntityTypeMapping TypeName="InventoryManagementModel.DevelopmentWork">
+        <MappingFragment StoreEntitySet="DevelopmentWork">
+          <ScalarProperty Name="DevelopmentWorkID" ColumnName="DevelopmentWorkID" />
+          <ScalarProperty Name="SaleOrderID" ColumnName="SaleOrderID" />
+          <ScalarProperty Name="BillNo" ColumnName="BillNo" />
+          <ScalarProperty Name="ConfirmDate" ColumnName="ConfirmDate" />
+          <ScalarProperty Name="DeliveryDate" ColumnName="DeliveryDate" />
+          <ScalarProperty Name="TopMeasurement" ColumnName="TopMeasurement" />
+          <ScalarProperty Name="BottomMeasurement" ColumnName="BottomMeasurement" />
+          <ScalarProperty Name="DesignPhotoUrl" ColumnName="DesignPhotoUrl" />
+          <ScalarProperty Name="WorkTypeID" ColumnName="WorkTypeID" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Employees">
+      <EntityTypeMapping TypeName="InventoryManagementModel.Employee">
+        <MappingFragment StoreEntitySet="Employee">
+          <ScalarProperty Name="EmployeeID" ColumnName="EmployeeID" />
+          <ScalarProperty Name="EmployeeName" ColumnName="EmployeeName" />
+          <ScalarProperty Name="Mobile" ColumnName="Mobile" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="JoiningDate" ColumnName="JoiningDate" />
+          <ScalarProperty Name="Detail" ColumnName="Detail" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Inventories">
+      <EntityTypeMapping TypeName="InventoryManagementModel.Inventory">
+        <MappingFragment StoreEntitySet="Inventory">
+          <ScalarProperty Name="InventoryID" ColumnName="InventoryID" />
+          <ScalarProperty Name="InventoryTypeID" ColumnName="InventoryTypeID" />
+          <ScalarProperty Name="NoOfItem" ColumnName="NoOfItem" />
+          <ScalarProperty Name="PurchaseRate" ColumnName="PurchaseRate" />
+          <ScalarProperty Name="SellingRate" ColumnName="SellingRate" />
+          <ScalarProperty Name="UnitID" ColumnName="UnitID" />
+          <ScalarProperty Name="IsFastRunning" ColumnName="IsFastRunning" />
+          <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+          <ScalarProperty Name="UpdateBy" ColumnName="UpdateBy" />
+          <ScalarProperty Name="UpdatedOn" ColumnName="UpdatedOn" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="InventoryOrderDetails">
+      <EntityTypeMapping TypeName="InventoryManagementModel.InventoryOrderDetail">
+        <MappingFragment StoreEntitySet="InventoryOrderDetail">
+          <ScalarProperty Name="InventoryOrderDetailID" ColumnName="InventoryOrderDetailID" />
+          <ScalarProperty Name="InventoryTypeID" ColumnName="InventoryTypeID" />
+          <ScalarProperty Name="PurchaseRate" ColumnName="PurchaseRate" />
+          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+          <ScalarProperty Name="TotalItemsCost" ColumnName="TotalItemsCost" />
+          <ScalarProperty Name="VatNo" ColumnName="VatNo" />
+          <ScalarProperty Name="UnitID" ColumnName="UnitID" />
+          <ScalarProperty Name="SaleRate" ColumnName="SaleRate" />
+          <ScalarProperty Name="BarcodeID" ColumnName="BarcodeID" />
+          <ScalarProperty Name="InventoryOrderID" ColumnName="InventoryOrderID" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="InventoryOrders">
+      <EntityTypeMapping TypeName="InventoryManagementModel.InventoryOrder">
+        <MappingFragment StoreEntitySet="InventoryOrders">
+          <ScalarProperty Name="InventoryOrderID" ColumnName="InventoryOrderID" />
+          <ScalarProperty Name="PurchaseBillNo" ColumnName="PurchaseBillNo" />
+          <ScalarProperty Name="PurchaseDate" ColumnName="PurchaseDate" />
+          <ScalarProperty Name="SellerCompanyName" ColumnName="SellerCompanyName" />
+          <ScalarProperty Name="SellerCompanyAddress" ColumnName="SellerCompanyAddress" />
+          <ScalarProperty Name="AmountPaid" ColumnName="AmountPaid" />
+          <ScalarProperty Name="TotalOrderAmount" ColumnName="TotalOrderAmount" />
+          <ScalarProperty Name="AmountPaidDate" ColumnName="AmountPaidDate" />
+          <ScalarProperty Name="BalanceAmount" ColumnName="BalanceAmount" />
+          <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+          <ScalarProperty Name="IsCompleted" ColumnName="IsCompleted" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="InventoryTypes">
+      <EntityTypeMapping TypeName="InventoryManagementModel.InventoryType">
+        <MappingFragment StoreEntitySet="InventoryTypes">
+          <ScalarProperty Name="InventoryTypeId" ColumnName="InventoryTypeId" />
+          <ScalarProperty Name="InventoryTypeName" ColumnName="InventoryTypeName" />
+          <ScalarProperty Name="InventoryDescription" ColumnName="InventoryDescription" />
+          <ScalarProperty Name="UnitName" ColumnName="UnitName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MstUnits">
+      <EntityTypeMapping TypeName="InventoryManagementModel.MstUnit">
+        <MappingFragment StoreEntitySet="MstUnit">
+          <ScalarProperty Name="UnitID" ColumnName="UnitID" />
+          <ScalarProperty Name="UnitName" ColumnName="UnitName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Roles">
+      <EntityTypeMapping TypeName="InventoryManagementModel.Role">
+        <MappingFragment StoreEntitySet="Role">
+          <ScalarProperty Name="RoleID" ColumnName="RoleID" />
+          <ScalarProperty Name="RoleName" ColumnName="RoleName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Salaries">
+      <EntityTypeMapping TypeName="InventoryManagementModel.Salary">
+        <MappingFragment StoreEntitySet="Salary">
+          <ScalarProperty Name="SalaryID" ColumnName="SalaryID" />
+          <ScalarProperty Name="EmployeeID" ColumnName="EmployeeID" />
+          <ScalarProperty Name="AmountPaidDate" ColumnName="AmountPaidDate" />
+          <ScalarProperty Name="WorkAssignID" ColumnName="WorkAssignID" />
+          <ScalarProperty Name="TotalAmountToPay" ColumnName="TotalAmountToPay" />
+          <ScalarProperty Name="AmountPaid" ColumnName="AmountPaid" />
+          <ScalarProperty Name="RemainingAmount" ColumnName="RemainingAmount" />
+          <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SaleOrderDetails">
+      <EntityTypeMapping TypeName="InventoryManagementModel.SaleOrderDetail">
+        <MappingFragment StoreEntitySet="SaleOrderDetail">
+          <ScalarProperty Name="SaleOrderDetailID" ColumnName="SaleOrderDetailID" />
+          <ScalarProperty Name="InventoryTypeID" ColumnName="InventoryTypeID" />
+          <ScalarProperty Name="SellingRate" ColumnName="SellingRate" />
+          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+          <ScalarProperty Name="UnitID" ColumnName="UnitID" />
+          <ScalarProperty Name="TotalAmount" ColumnName="TotalAmount" />
+          <ScalarProperty Name="SaleOrderID" ColumnName="SaleOrderID" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SalesOrders">
+      <EntityTypeMapping TypeName="InventoryManagementModel.SalesOrder">
+        <MappingFragment StoreEntitySet="SalesOrder">
+          <ScalarProperty Name="SaleOrderID" ColumnName="SaleOrderID" />
+          <ScalarProperty Name="BillNo" ColumnName="BillNo" />
+          <ScalarProperty Name="PersonName" ColumnName="PersonName" />
+          <ScalarProperty Name="Mobile" ColumnName="Mobile" />
+          <ScalarProperty Name="SchoolID" ColumnName="SchoolID" />
+          <ScalarProperty Name="CustomerTypeID" ColumnName="CustomerTypeID" />
+          <ScalarProperty Name="PaidAmount" ColumnName="PaidAmount" />
+          <ScalarProperty Name="RemainingAmount" ColumnName="RemainingAmount" />
+          <ScalarProperty Name="TotalCost" ColumnName="TotalCost" />
+          <ScalarProperty Name="SaleOrderDate" ColumnName="SaleOrderDate" />
+          <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+          <ScalarProperty Name="IsMakingRequired" ColumnName="IsMakingRequired" />
+          <ScalarProperty Name="IsCompleted" ColumnName="IsCompleted" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Schools">
+      <EntityTypeMapping TypeName="InventoryManagementModel.School">
+        <MappingFragment StoreEntitySet="School">
+          <ScalarProperty Name="SchoolID" ColumnName="SchoolID" />
+          <ScalarProperty Name="SchoolName" ColumnName="SchoolName" />
+          <ScalarProperty Name="SchoolMobileNumber" ColumnName="SchoolMobileNumber" />
+          <ScalarProperty Name="SchoolAddrees" ColumnName="SchoolAddrees" />
+          <ScalarProperty Name="SchoolEmail" ColumnName="SchoolEmail" />
+          <ScalarProperty Name="ContactPersonName" ColumnName="ContactPersonName" />
+          <ScalarProperty Name="ContactPersonMobileNo" ColumnName="ContactPersonMobileNo" />
+          <ScalarProperty Name="ContactPersonEmail" ColumnName="ContactPersonEmail" />
+          <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="ModifiedOn" ColumnName="ModifiedOn" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Users">
+      <EntityTypeMapping TypeName="InventoryManagementModel.User">
+        <MappingFragment StoreEntitySet="User">
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="EmployeeID" ColumnName="EmployeeID" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="UserRoleTypeID" ColumnName="UserRoleTypeID" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WorkAssigns">
+      <EntityTypeMapping TypeName="InventoryManagementModel.WorkAssign">
+        <MappingFragment StoreEntitySet="WorkAssign">
+          <ScalarProperty Name="WorkAssignID" ColumnName="WorkAssignID" />
+          <ScalarProperty Name="EmployeeID" ColumnName="EmployeeID" />
+          <ScalarProperty Name="BillNo" ColumnName="BillNo" />
+          <ScalarProperty Name="WorkTypeID" ColumnName="WorkTypeID" />
+          <ScalarProperty Name="WorkCount" ColumnName="WorkCount" />
+          <ScalarProperty Name="WorkAssignDate" ColumnName="WorkAssignDate" />
+          <ScalarProperty Name="ExpectedCompletionDate" ColumnName="ExpectedCompletionDate" />
+          <ScalarProperty Name="CompletedCount" ColumnName="CompletedCount" />
+          <ScalarProperty Name="IsComplete" ColumnName="IsComplete" />
+          <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WorkAssignInventoryUseds">
+      <EntityTypeMapping TypeName="InventoryManagementModel.WorkAssignInventoryUsed">
+        <MappingFragment StoreEntitySet="WorkAssignInventoryUsed">
+          <ScalarProperty Name="WorkAssignInventoryUsedID" ColumnName="WorkAssignInventoryUsedID" />
+          <ScalarProperty Name="InventoryTypeID" ColumnName="InventoryTypeID" />
+          <ScalarProperty Name="InventoryUsedCount" ColumnName="InventoryUsedCount" />
+          <ScalarProperty Name="WorkAssignID" ColumnName="WorkAssignID" />
+          <ScalarProperty Name="UnitID" ColumnName="UnitID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WorkTypes">
+      <EntityTypeMapping TypeName="InventoryManagementModel.WorkType">
+        <MappingFragment StoreEntitySet="WorkType">
+          <ScalarProperty Name="WorkTypeID" ColumnName="WorkTypeID" />
+          <ScalarProperty Name="WorkTypeName" ColumnName="WorkTypeName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

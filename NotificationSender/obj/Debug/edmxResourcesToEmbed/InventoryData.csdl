@@ -1,0 +1,292 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="InventoryManagementModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="CapitalDetail">
+    <Key>
+      <PropertyRef Name="CapitalDetailID" />
+    </Key>
+    <Property Name="CapitalDetailID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CapitalUseDate" Type="DateTime" Precision="0" />
+    <Property Name="CapitalTypeID" Type="Int32" />
+    <Property Name="Amount" Type="Int32" />
+    <Property Name="Remarks" Type="String" MaxLength="600" FixedLength="false" Unicode="false" />
+    <Property Name="SellBuyBillNo" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Name="CreatedBy" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="0" />
+    <Property Name="ModifiedBy" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Name="ModifiedDate" Type="DateTime" Precision="0" />
+  </EntityType>
+  <EntityType Name="CapitalType">
+    <Key>
+      <PropertyRef Name="CapitalTypeID" />
+    </Key>
+    <Property Name="CapitalTypeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CapitalTypeName" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="CustomerType">
+    <Key>
+      <PropertyRef Name="CustomerTypeID" />
+    </Key>
+    <Property Name="CustomerTypeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CustomerTypeName" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="DevelopmentWork">
+    <Key>
+      <PropertyRef Name="DevelopmentWorkID" />
+    </Key>
+    <Property Name="DevelopmentWorkID" Type="Int32" Nullable="false" />
+    <Property Name="SaleOrderID" Type="Int32" />
+    <Property Name="BillNo" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Name="ConfirmDate" Type="DateTime" Precision="0" />
+    <Property Name="DeliveryDate" Type="DateTime" Precision="0" />
+    <Property Name="TopMeasurement" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="BottomMeasurement" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="DesignPhotoUrl" Type="String" MaxLength="600" FixedLength="false" Unicode="false" />
+    <Property Name="WorkTypeID" Type="Int32" />
+    <Property Name="CreatedBy" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="0" />
+    <Property Name="ModifiedBy" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Name="ModifiedDate" Type="DateTime" Precision="0" />
+  </EntityType>
+  <EntityType Name="Employee">
+    <Key>
+      <PropertyRef Name="EmployeeID" />
+    </Key>
+    <Property Name="EmployeeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="EmployeeName" Type="String" MaxLength="700" FixedLength="false" Unicode="false" />
+    <Property Name="Mobile" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Email" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Name="Address" Type="String" MaxLength="700" FixedLength="false" Unicode="false" />
+    <Property Name="JoiningDate" Type="DateTime" Precision="0" />
+    <Property Name="Detail" Type="String" MaxLength="700" FixedLength="false" Unicode="false" />
+    <Property Name="IsActive" Type="Boolean" />
+    <Property Name="CreatedBy" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="0" />
+    <Property Name="ModifiedBy" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Name="ModifiedDate" Type="DateTime" Precision="0" />
+  </EntityType>
+  <EntityType Name="Inventory">
+    <Key>
+      <PropertyRef Name="InventoryID" />
+    </Key>
+    <Property Name="InventoryID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="InventoryTypeID" Type="Int32" />
+    <Property Name="NoOfItem" Type="Int32" />
+    <Property Name="PurchaseRate" Type="Int32" />
+    <Property Name="SellingRate" Type="Int32" />
+    <Property Name="UnitID" Type="Int32" />
+    <Property Name="IsFastRunning" Type="Boolean" />
+    <Property Name="Remarks" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Name="CreatedBy" Type="String" MaxLength="600" FixedLength="false" Unicode="false" />
+    <Property Name="CreatedOn" Type="DateTime" Precision="0" />
+    <Property Name="UpdateBy" Type="String" MaxLength="600" FixedLength="false" Unicode="false" />
+    <Property Name="UpdatedOn" Type="DateTime" Precision="0" />
+  </EntityType>
+  <EntityType Name="InventoryOrderDetail">
+    <Key>
+      <PropertyRef Name="InventoryOrderDetailID" />
+    </Key>
+    <Property Name="InventoryOrderDetailID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="InventoryTypeID" Type="Int32" Nullable="false" />
+    <Property Name="PurchaseRate" Type="Int32" />
+    <Property Name="Quantity" Type="Int32" />
+    <Property Name="TotalItemsCost" Type="Int32" />
+    <Property Name="VatNo" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Name="UnitID" Type="Int32" />
+    <Property Name="SaleRate" Type="Int32" />
+    <Property Name="BarcodeID" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="InventoryOrderID" Type="Int32" />
+    <Property Name="CreatedBy" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="0" />
+    <Property Name="ModifiedBy" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="ModifiedDate" Type="DateTime" Precision="0" />
+  </EntityType>
+  <EntityType Name="InventoryOrder">
+    <Key>
+      <PropertyRef Name="InventoryOrderID" />
+    </Key>
+    <Property Name="InventoryOrderID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PurchaseBillNo" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Name="PurchaseDate" Type="DateTime" Precision="0" />
+    <Property Name="SellerCompanyName" Type="String" MaxLength="600" FixedLength="false" Unicode="false" />
+    <Property Name="SellerCompanyAddress" Type="String" MaxLength="1200" FixedLength="false" Unicode="false" />
+    <Property Name="AmountPaid" Type="Int32" />
+    <Property Name="TotalOrderAmount" Type="Int32" />
+    <Property Name="AmountPaidDate" Type="DateTime" Precision="0" />
+    <Property Name="BalanceAmount" Type="Int32" />
+    <Property Name="Remarks" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+    <Property Name="IsCompleted" Type="Boolean" />
+    <Property Name="CreatedBy" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="0" />
+    <Property Name="ModifiedBy" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="ModifiedDate" Type="DateTime" Precision="0" />
+  </EntityType>
+  <EntityType Name="InventoryType">
+    <Key>
+      <PropertyRef Name="InventoryTypeId" />
+    </Key>
+    <Property Name="InventoryTypeId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="InventoryTypeName" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Name="InventoryDescription" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="UnitName" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="MstUnit">
+    <Key>
+      <PropertyRef Name="UnitID" />
+    </Key>
+    <Property Name="UnitID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UnitName" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Role">
+    <Key>
+      <PropertyRef Name="RoleID" />
+    </Key>
+    <Property Name="RoleID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="RoleName" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Salary">
+    <Key>
+      <PropertyRef Name="SalaryID" />
+    </Key>
+    <Property Name="SalaryID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="EmployeeID" Type="Int32" />
+    <Property Name="AmountPaidDate" Type="DateTime" Precision="0" />
+    <Property Name="WorkAssignID" Type="Int32" />
+    <Property Name="TotalAmountToPay" Type="Int32" />
+    <Property Name="AmountPaid" Type="Int32" />
+    <Property Name="RemainingAmount" Type="Int32" />
+    <Property Name="Remarks" Type="String" MaxLength="600" FixedLength="false" Unicode="false" />
+    <Property Name="CreatedBy" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="0" />
+    <Property Name="ModifiedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ModifiedDate" Type="DateTime" Precision="0" />
+  </EntityType>
+  <EntityType Name="SaleOrderDetail">
+    <Key>
+      <PropertyRef Name="SaleOrderDetailID" />
+    </Key>
+    <Property Name="SaleOrderDetailID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="InventoryTypeID" Type="Int32" />
+    <Property Name="SellingRate" Type="Int32" />
+    <Property Name="Quantity" Type="Int32" />
+    <Property Name="UnitID" Type="Int32" />
+    <Property Name="TotalAmount" Type="Int32" />
+    <Property Name="SaleOrderID" Type="Int32" />
+    <Property Name="CreatedBy" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="0" />
+    <Property Name="ModifiedBy" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="ModifiedDate" Type="DateTime" Precision="0" />
+  </EntityType>
+  <EntityType Name="SalesOrder">
+    <Key>
+      <PropertyRef Name="SaleOrderID" />
+    </Key>
+    <Property Name="SaleOrderID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="BillNo" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Name="PersonName" Type="String" MaxLength="70" FixedLength="false" Unicode="false" />
+    <Property Name="Mobile" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="SchoolID" Type="Int32" />
+    <Property Name="CustomerTypeID" Type="Int32" />
+    <Property Name="PaidAmount" Type="Int32" />
+    <Property Name="RemainingAmount" Type="Int32" />
+    <Property Name="TotalCost" Type="Int32" />
+    <Property Name="SaleOrderDate" Type="DateTime" Precision="0" />
+    <Property Name="Remarks" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+    <Property Name="IsMakingRequired" Type="Boolean" />
+    <Property Name="IsCompleted" Type="Boolean" />
+    <Property Name="CreatedBy" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="0" />
+    <Property Name="ModifiedBy" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Name="ModifiedDate" Type="DateTime" Precision="0" />
+  </EntityType>
+  <EntityType Name="School">
+    <Key>
+      <PropertyRef Name="SchoolID" />
+    </Key>
+    <Property Name="SchoolID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SchoolName" Type="String" MaxLength="700" FixedLength="false" Unicode="false" />
+    <Property Name="SchoolMobileNumber" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="SchoolAddrees" Type="String" MaxLength="700" FixedLength="false" Unicode="false" />
+    <Property Name="SchoolEmail" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Name="ContactPersonName" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Name="ContactPersonMobileNo" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="ContactPersonEmail" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Name="Remarks" Type="String" MaxLength="600" FixedLength="false" Unicode="false" />
+    <Property Name="CreatedBy" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="CreatedOn" Type="DateTime" Precision="0" />
+    <Property Name="ModifiedBy" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="ModifiedOn" Type="DateTime" Precision="0" />
+  </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="UserID" />
+    </Key>
+    <Property Name="UserID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="EmployeeID" Type="Int32" />
+    <Property Name="UserName" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="UserRoleTypeID" Type="Int32" />
+    <Property Name="Password" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="IsActive" Type="Boolean" />
+    <Property Name="Remarks" Type="String" MaxLength="600" FixedLength="false" Unicode="false" />
+    <Property Name="CreatedBy" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="0" />
+    <Property Name="ModifiedBy" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Name="ModifiedDate" Type="DateTime" Precision="0" />
+  </EntityType>
+  <EntityType Name="WorkAssign">
+    <Key>
+      <PropertyRef Name="WorkAssignID" />
+    </Key>
+    <Property Name="WorkAssignID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="EmployeeID" Type="Int32" />
+    <Property Name="BillNo" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Name="WorkTypeID" Type="Int32" />
+    <Property Name="WorkCount" Type="Int32" />
+    <Property Name="WorkAssignDate" Type="DateTime" Precision="0" />
+    <Property Name="ExpectedCompletionDate" Type="DateTime" Precision="0" />
+    <Property Name="CompletedCount" Type="Int32" />
+    <Property Name="IsComplete" Type="Boolean" />
+    <Property Name="Remarks" Type="String" MaxLength="600" FixedLength="false" Unicode="false" />
+    <Property Name="CreatedBy" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Name="ModifiedBy" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="0" />
+    <Property Name="ModifiedDate" Type="DateTime" Precision="0" />
+  </EntityType>
+  <EntityType Name="WorkAssignInventoryUsed">
+    <Key>
+      <PropertyRef Name="WorkAssignInventoryUsedID" />
+    </Key>
+    <Property Name="WorkAssignInventoryUsedID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="InventoryTypeID" Type="Int32" />
+    <Property Name="InventoryUsedCount" Type="Int32" />
+    <Property Name="WorkAssignID" Type="Int32" />
+    <Property Name="UnitID" Type="Int32" />
+  </EntityType>
+  <EntityType Name="WorkType">
+    <Key>
+      <PropertyRef Name="WorkTypeID" />
+    </Key>
+    <Property Name="WorkTypeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="WorkTypeName" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityContainer Name="InventoryManagementEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="CapitalDetails" EntityType="Self.CapitalDetail" />
+    <EntitySet Name="CapitalTypes" EntityType="Self.CapitalType" />
+    <EntitySet Name="CustomerTypes" EntityType="Self.CustomerType" />
+    <EntitySet Name="DevelopmentWorks" EntityType="Self.DevelopmentWork" />
+    <EntitySet Name="Employees" EntityType="Self.Employee" />
+    <EntitySet Name="Inventories" EntityType="Self.Inventory" />
+    <EntitySet Name="InventoryOrderDetails" EntityType="Self.InventoryOrderDetail" />
+    <EntitySet Name="InventoryOrders" EntityType="Self.InventoryOrder" />
+    <EntitySet Name="InventoryTypes" EntityType="Self.InventoryType" />
+    <EntitySet Name="MstUnits" EntityType="Self.MstUnit" />
+    <EntitySet Name="Roles" EntityType="Self.Role" />
+    <EntitySet Name="Salaries" EntityType="Self.Salary" />
+    <EntitySet Name="SaleOrderDetails" EntityType="Self.SaleOrderDetail" />
+    <EntitySet Name="SalesOrders" EntityType="Self.SalesOrder" />
+    <EntitySet Name="Schools" EntityType="Self.School" />
+    <EntitySet Name="Users" EntityType="Self.User" />
+    <EntitySet Name="WorkAssigns" EntityType="Self.WorkAssign" />
+    <EntitySet Name="WorkAssignInventoryUseds" EntityType="Self.WorkAssignInventoryUsed" />
+    <EntitySet Name="WorkTypes" EntityType="Self.WorkType" />
+  </EntityContainer>
+</Schema>

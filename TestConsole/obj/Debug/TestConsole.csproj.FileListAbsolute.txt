@@ -1,0 +1,15 @@
+D:\Office Data\InventoryManagement\TestConsole\bin\Debug\TestConsole.exe.config
+D:\Office Data\InventoryManagement\TestConsole\bin\Debug\TestConsole.exe
+D:\Office Data\InventoryManagement\TestConsole\bin\Debug\TestConsole.pdb
+D:\Office Data\InventoryManagement\TestConsole\obj\Debug\TestConsole.csprojResolveAssemblyReference.cache
+D:\Office Data\InventoryManagement\TestConsole\obj\Debug\TestConsole.exe
+D:\Office Data\InventoryManagement\TestConsole\obj\Debug\TestConsole.pdb
+E:\Programming\InventoryManagement\TestConsole\bin\Debug\TestConsole.exe.config
+E:\Programming\InventoryManagement\TestConsole\obj\Debug\TestConsole.exe
+E:\Programming\InventoryManagement\TestConsole\obj\Debug\TestConsole.pdb
+E:\Other Work\Office Data\InventoryManagement\TestConsole\bin\Debug\TestConsole.exe.config
+E:\Other Work\Office Data\InventoryManagement\TestConsole\bin\Debug\TestConsole.exe
+E:\Other Work\Office Data\InventoryManagement\TestConsole\bin\Debug\TestConsole.pdb
+E:\Other Work\Office Data\InventoryManagement\TestConsole\obj\Debug\TestConsole.csprojResolveAssemblyReference.cache
+E:\Other Work\Office Data\InventoryManagement\TestConsole\obj\Debug\TestConsole.exe
+E:\Other Work\Office Data\InventoryManagement\TestConsole\obj\Debug\TestConsole.pdb
